@@ -2,94 +2,95 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="img/logo/logo.png" rel="icon">
-    <title>Aplikasi Ekstrakulikuler SMA 2 Baubau - Login</title>
-    <link href="{{ asset('assets/ruangadmin') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
-        type="text/css">
-    <link href="{{ asset('assets/ruangadmin') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"
-        type="text/css">
-    <link href="{{ asset('assets/ruangadmin') }}/css/ruang-admin.min.css" rel="stylesheet">
-
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Extraculicullar SMADA</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/feather/feather.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/typicons/typicons.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/css/vendor.bundle.base.css" />
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/datatables.net-bs4/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/js/select.dataTables.min.css" />
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset('assets/client') }}/css/vertical-layout-light/style.css" />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{ asset('assets/client') }}/images/favicon.png" />
 </head>
 
-<body class="bg-gradient-login">
-    <!-- Login Content -->
-    <div class="container-login">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-12 col-md-9">
-                <div class="card shadow-sm my-5 mx-5 px-2 py-2">
-                    <div class="card-body p-0 px-4">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="login-form">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">LOGIN <br>Aplikasi Ekstrakulikuler SMA 2 Baubau</h1>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                            @if (session('status'))
-                                                <div class="alert alert-success">
-                                                    {{ session('status') }}
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <form class="user" action="{{ route('post-login') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="cekrequest" value="user">
-                                        <div class="form-group">
-                                            <input type="text" name="login_username" class="form-control"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Masukkan username anda...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="login_password" class="form-control"
-                                                id="exampleInputPassword" placeholder="Masukkan password anda...">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small"
-                                                style="line-height: 1.5rem;">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-success btn-block">LOGIN</a>
-                                        </div>
-                                        {{-- <hr> --}}
-                                        {{-- <a href="index.html" class="btn btn-google btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
-                    <a href="index.html" class="btn btn-facebook btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a> --}}
-                                    </form>
-                                    {{-- <hr> --}}
-                                    {{-- <div class="text-center">
-                    <a class="font-weight-bold small" href="register.html">Daftar sekarang!</a>
-                  </div> --}}
-                                    <div class="text-center">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<body>
+    <div class="container1">
+        {{-- <div class="header">
+            <img class="img1" src="images/logosmada.png" alt="" />
+            <h5>Sistem Informasi Extraculicullar</h5>
+            <br />
+            <h6>SMA NEGERI 2 BAUBAU</h6>
+        </div> --}}
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
                     </div>
-                </div>
+                @endif
             </div>
         </div>
-    </div>
-    <!-- Login Content -->
-    <script src="{{ asset('assets/ruangadmin') }}/vendor/jquery/jquery.min.js"></script>
-    <script src="{{ asset('assets/ruangadmin') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('assets/ruangadmin') }}/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/ruang-admin.min.js"></script>
+        <div class="card text-white bg-info mb-3 mt-4" style="max-width: 18rem; margin:auto;">
+            <div class="card-header text-center">LOGIN</div>
+            <div class="card-body">
+                <form class="user" action="{{ route('post-login') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="cekrequest" value="user">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="login_username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="login_password">
+                    </div>
+                    {{-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Ingat Saya</label>
+                    </div> --}}
+                    <button type="submit" class="btn btn-success">LOGIN</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+        <!-- plugins:js -->
+        <script src="{{ asset('assets/client') }}/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script src="{{ asset('assets/client') }}/vendors/chart.js/Chart.min.js"></script>
+        <script src="{{ asset('assets/client') }}/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="{{ asset('assets/client') }}/vendors/progressbar.js/progressbar.min.js"></script>
+
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="{{ asset('assets/client') }}/js/off-canvas.js"></script>
+        <script src="{{ asset('assets/client') }}/js/hoverable-collapse.js"></script>
+        <script src="{{ asset('assets/client') }}/js/template.js"></script>
+        <script src="{{ asset('assets/client') }}/js/settings.js"></script>
+        <script src="{{ asset('assets/client') }}/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="{{ asset('assets/client') }}/js/dashboard.js"></script>
+        <script src="{{ asset('assets/client') }}/js/Chart.roundedBarCharts.js"></script>
+        <!-- End custom js for this page-->
 </body>
 
 </html>

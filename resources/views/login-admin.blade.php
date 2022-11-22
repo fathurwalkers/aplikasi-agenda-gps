@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="img/logo/logo.png" rel="icon">
-    <title>Aplikasi Ekstrakulikuler SMA 2 Baubau - Login</title>
+    <title>APLIKASI AGENDA ADAT</title>
     <link href="{{ asset('assets/ruangadmin') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link href="{{ asset('assets/ruangadmin') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"
@@ -29,7 +29,7 @@
                             <div class="col-lg-12">
                                 <div class="login-form">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">ADMIN LOGIN <br>Aplikasi Ekstrakulikuler SMA 2 Baubau</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">ADMIN LOGIN <br>Aplikasi Agenda Kegiatan Adat<br>Kelurahan Lipu Katobengke</h1>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12 col-lg-12">
