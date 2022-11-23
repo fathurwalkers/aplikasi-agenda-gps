@@ -138,7 +138,5 @@ class GenerateController extends Controller
             $save_agenda->save();
             // dd($save_agenda);
         }
-        $agenda_all = Agenda::all();
-        dd($agenda_all);
     }
 }

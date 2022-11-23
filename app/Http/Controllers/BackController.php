@@ -26,9 +26,7 @@ class BackController extends Controller
     {
         $session_users = session('data_login');
         $users = Login::find($session_users->id);
-        // $akun = Login::all();
         $akun = Login::where('login_level', '!=', 'admin')->get();
-        $siswa = Siswa::all();
         return view('dashboard.daftar-akun', [
             'users' => $users,
             'akun' => $akun,

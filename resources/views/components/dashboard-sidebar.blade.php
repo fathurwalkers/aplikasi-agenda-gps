@@ -104,8 +104,8 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manajemen Pengguna</h6>
                     <a class="collapse-item" href="#">Daftar Pengguna</a>
-                    <a class="collapse-item" href="#">Daftar Pelaksana</a>
-                    <a class="collapse-item" href="#">Daftar Akun</a>
+                    {{-- <a class="collapse-item" href="#">Daftar Pelaksana</a> --}}
+                    <a class="collapse-item" href="{{ route('daftar-akun') }}">Daftar Akun</a>
                 </div>
             </div>
         </li>
