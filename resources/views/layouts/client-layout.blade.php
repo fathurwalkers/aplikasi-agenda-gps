@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/typicons/typicons.css" />
     <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/simple-line-icons/css/simple-line-icons.css" />
     <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/css/vendor.bundle.base.css" />
-    <link rel="stylesheet" href="{{ asset('leafletjs') }}/leaflet.css" />
+
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link
@@ -31,6 +31,14 @@
     <link rel="stylesheet" href="{{ asset('assets/client') }}/css/vertical-layout-light/style.css" />
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('assets/client') }}/images/favicon.png" />
+    {{-- <link rel="stylesheet" href="{{ asset('leafletjs') }}/leaflet.css" /> --}}
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
     @stack('css')
   </head>
   <body>
@@ -67,7 +75,7 @@
     <div class="container-fluid bg-primary fixed-bottom">
           <ul>
             <li><a href="{{ route('client') }}"><i class="bi bi-house-fill text-light "></i></a>Home</li>
-            <li><a href="#"><i class="bi bi-list-stars text-light"></i></a>Agenda</li>
+            <li><a href="{{ route('client-daftar-agenda') }}"><i class="bi bi-list-stars text-light"></i></a>Agenda</li>
             <li><a href="#"><i class="bi bi-person-check text-light "></i></a>Petunjuk</li>
             <li><a href="{{ route('client-profile') }}"><i class="bi bi-person-circle text-light"></i></a>profil</li>
           </ul>

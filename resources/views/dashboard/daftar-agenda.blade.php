@@ -137,7 +137,7 @@
                                             <th>Tempat</th>
                                             <th>Bulan</th>
                                             <th>Tanggal / Waktu</th>
-                                            <th>Penyelenggara</th>
+                                            <th>Kategori</th>
 
                                             <th>Kelola</th>
                                         </tr>
@@ -151,7 +151,7 @@
                                                 <td>{{ $item->agenda_tempat }}</td>
                                                 <td>{{ $item->bulan->bulan_nama }}</td>
                                                 <td>{{ date('d-M-Y / H:i', strtotime($item->agenda_waktu)) }}</td>
-                                                <td>{{ $item->agenda_penyelenggara }}</td>
+                                                <td>{{ $item->kategori->kategori_nama }}</td>
 
                                                 <td>
                                                     <div class="row">

@@ -11,6 +11,7 @@ use Illuminate\Support\Arr;
 use App\Models\Login;
 use App\Models\Pelaksana;
 Use App\Models\Pengguna;
+use App\Models\Agenda;
 use App\Models\Bulan;
 
 class ClientController extends Controller
@@ -33,6 +34,34 @@ class ClientController extends Controller
         return view('client.index', [
             'users' => $users,
             'pengguna' => $pengguna,
+        ]);
+    }
+
+    public function client_daftar_agenda()
+    {
+        $session_users = session('data_login');
+        $users = Login::find($session_users->id);
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
+        $agenda = Agenda::all();
+        return view('client.client-daftar-agenda', [
+            'users' => $users,
+            'pengguna' => $pengguna,
+            'agenda' => $agenda,
+        ]);
+    }
+
+    public function client_lihat_agenda($id)
+    {
+        $agenda_id = $id;
+        $session_users = session('data_login');
+        $users = Login::find($session_users->id);
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
+        $agenda = Agenda::find($agenda_id);
+        // dd($agenda);
+        return view('client.client-lihat-agenda', [
+            'users' => $users,
+            'pengguna' => $pengguna,
+            'agenda' => $agenda,
         ]);
     }
 

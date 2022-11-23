@@ -13,6 +13,7 @@ use App\Models\Pelaksana;
 Use App\Models\Pengguna;
 use App\Models\Bulan;
 use App\Models\Agenda;
+use App\Models\Kategori;
 
 class GenerateController extends Controller
 {
@@ -81,19 +82,20 @@ class GenerateController extends Controller
     {
         $faker                  = Faker::create('id_ID');
         $bulan = Bulan::all()->toArray();
+        $kategori = Kategori::all()->toArray();
         $array_lat = [
-            '5.487045',
-            '5.490170',
-            '5.493811',
-            '5.496801',
-            '5.496855'
+            '-5,4755914',
+            '-5,4755914',
+            '-5,4755914',
+            '-5,4755914',
+            '-5,4755914'
         ];
         $array_long = [
-            '122.581907',
-            '122.577541',
-            '122.575308',
-            '122.579934',
-            '122.576307'
+            '122,5883593',
+            '122,5883593',
+            '122,5883593',
+            '122,5883593',
+            '122,5883593'
         ];
 
         $array_tempat = [
@@ -125,6 +127,7 @@ class GenerateController extends Controller
             // $iter =+ 1;
             $agenda = new Agenda;
             $random_bulan = Arr::random($bulan);
+            $random_kategori = Arr::random($kategori);
             $random_status = Arr::random($array_status);
             $save_agenda = $agenda->create([
                 "agenda_nama" => $array_nama_agenda[$iter1++],
@@ -136,6 +139,7 @@ class GenerateController extends Controller
                 "agenda_penyelenggara" => $random_status,
                 "agenda_waktu" => now(),
                 "bulan_id" => $random_bulan["id"],
+                "kategori_id" => $random_kategori["id"],
                 "created_at" => now(),
                 "updated_at" => now()
             ]);

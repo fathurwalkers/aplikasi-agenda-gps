@@ -21,7 +21,9 @@ class CreateAgendasTable extends Migration
             $table->dateTime('agenda_waktu')->nullable();
 
             $table->unsignedBigInteger('bulan_id')->nullable();
+            $table->unsignedBigInteger('kategori_id')->nullable();
             $table->foreign('bulan_id')->references('id')->on('bulan');
+            $table->foreign('kategori_id')->references('id')->on('kategori');
 
             $table->timestamps();
         });

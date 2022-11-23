@@ -163,6 +163,5 @@ class DatabaseSeeder extends Seeder
             ]);
             $save_kategori->save();
         }
-
     }
 }
