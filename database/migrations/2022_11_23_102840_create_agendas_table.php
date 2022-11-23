@@ -10,6 +10,19 @@ class CreateAgendasTable extends Migration
     {
         Schema::create('agenda', function (Blueprint $table) {
             $table->id();
+
+            $table->string('agenda_nama')->nullable();
+            $table->string('agenda_tempat')->nullable();
+            $table->string('agenda_keterangan')->nullable();
+            $table->string('agenda_lat')->nullable();
+            $table->string('agenda_long')->nullable();
+            $table->string('agenda_status')->nullable();
+            $table->string('agenda_penyelenggara')->nullable();
+            $table->dateTime('agenda_waktu')->nullable();
+
+            $table->unsignedBigInteger('bulan_id')->nullable();
+            $table->foreign('bulan_id')->references('id')->on('bulan');
+
             $table->timestamps();
         });
     }

@@ -10,6 +10,9 @@ class CreateBulansTable extends Migration
     {
         Schema::create('bulan', function (Blueprint $table) {
             $table->id();
+
+            $table->string('bulan_nama')->nullable();
+
             $table->timestamps();
         });
     }

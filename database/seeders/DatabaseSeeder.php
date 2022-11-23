@@ -112,5 +112,36 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        // -----------------------------------------------------------
+
+        // -----------------------------------------------------------
+
+        // GENERATE BULAN
+        $array_bulan = [
+            "Muharram",
+            "Shafar",
+            "Rabiul Awal",
+            "Rabiul Akhir",
+            "Jumadil Awal" ,
+            "Jumadil Akhir",
+            "Rajab",
+            "Sya'ban",
+            "Ramadhan",
+            "Syawal",
+            "Dzulka'dah",
+            "Dzulhijah",
+        ];
+
+        foreach ($array_bulan as $bul) {
+            $bulan = new Bulan;
+            $save_bulan = $bulan->create([
+                'bulan_nama' => $bul,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_bulan->save();
+        }
+
     }
 }
