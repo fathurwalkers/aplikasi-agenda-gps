@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/typicons/typicons.css" />
     <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/simple-line-icons/css/simple-line-icons.css" />
     <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="{{ asset('leafletjs') }}/leaflet.css" />
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link
@@ -94,6 +95,7 @@
     <!-- Custom js for this page-->
     <script src="{{ asset('assets/client') }}/js/dashboard.js"></script>
     <script src="{{ asset('assets/client') }}/js/Chart.roundedBarCharts.js"></script>
+    <script src="{{ asset('leafletjs') }}/leaflet.js"></script>
     <!-- End custom js for this page-->
     @stack('js')
   </body>

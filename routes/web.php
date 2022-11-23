@@ -22,3 +22,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     Route::get('/', [BackController::class, 'index'])->name('dashboard');
 
 });
+
+// GENERATE ROUTE
+Route::get('/generate-pengguna', [BackController::class, 'generate_pengguna'])->name('generate-pengguna');
