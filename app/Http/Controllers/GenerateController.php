@@ -80,7 +80,7 @@ class GenerateController extends Controller
     public function generate_agenda()
     {
         $faker                  = Faker::create('id_ID');
-
+        $bulan = Bulan::all();
         $array_lat = [
             '5.487045',
             '5.490170',
@@ -112,7 +112,6 @@ class GenerateController extends Controller
             "Acara Pernikahan"
         ];
 
-        $bulan = Bulan::all();
         $array_status = [
             'BERLANGSUNG',
             'SELESAI',
@@ -121,14 +120,15 @@ class GenerateController extends Controller
 
         $iter = 0;
         foreach ($array_tempat as $tempat) {
+            $iter =+ 1;
             $agenda = new Agenda;
             $random_status = Arr::random($array_status);
             $save_agenda = $agenda->create([
-                "agenda_nama" => $array_nama_agenda[$iter++],
+                "agenda_nama" => $array_nama_agenda[$iter],
                 "agenda_tempat" => $tempat,
                 "agenda_keterangan" => $faker->paragraph(4),
-                "agenda_lat" => $array_lat[$iter++],
-                "agenda_long" => $array_long[$iter++],
+                "agenda_lat" => $array_lat[$iter],
+                "agenda_long" => $array_long[$iter],
                 "agenda_status" => "",
                 "agenda_penyelenggara" => $random_status,
                 "agenda_waktu" => now(),
