@@ -29,10 +29,41 @@ class ClientController extends Controller
         if($users->login_level == "admin"){
             return redirect()->route('dashboard')->with('status', 'Maaf anda tidak punya akses ke Aplikasi Client.');
         }
-        $siswa = Siswa::where('login_id', $users->id)->first();
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
         return view('client.index', [
             'users' => $users,
-            'siswa' => $siswa,
+            'pengguna' => $pengguna,
         ]);
+    }
+
+    public function client_profile()
+    {
+        $session_users = session('data_login');
+        $users = Login::find($session_users->id);
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
+        return view('client.client-profile', [
+            'users' => $users,
+            'pengguna' => $pengguna,
+        ]);
+    }
+
+    public function client_ubah_foto(Request $request)
+    {
+        $session_users = session('data_login');
+        $users = Login::find($session_users->id);
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
+        $gambar_cek = $request->file('foto');
+        $pengguna_foto = $pengguna->pengguna_foto;
+        if ($gambar_cek == NULL) {
+            return redirect()->route('client')->with('status', 'Maaf anda tidak memasukkan foto apapun. silahkan lakukan kembali dengan memasukkan foto.');
+        } else {
+            $randomNamaGambar = Str::random(10) . '.jpg';
+            $gambar = $request->file('foto')->move(public_path('assets'), strtolower($randomNamaGambar));
+        }
+        $pengguna_update = $pengguna->update([
+            'pengguna_foto' => $gambar->getFilename(),
+            'updated_at' => now()
+        ]);
+        return redirect()->route('client-profile');
     }
 }

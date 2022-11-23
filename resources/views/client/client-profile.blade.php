@@ -45,7 +45,7 @@
                 @csrf
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 mx-auto d-flex align-items-center justify-content-center">
-                        <img id="output_image" class="border border-1" src="{{ asset('assets') }}/{{ $siswa->siswa_foto }}"/>
+                        <img id="output_image" class="border border-1" src="{{ asset('assets') }}/{{ $pengguna->pengguna_foto }}"/>
                     </div>
                 </div>
 
@@ -74,41 +74,34 @@
                 <div class="card-body">
                     <div class="row ">
                         <div class="col-4">
-                            No. Induk
-                        </div>
-                        <div class="col-8">
-                            : {{ $siswa->siswa_nisn }}
-                        </div>
-                        <div class="col-4">
                             Nama
                         </div>
                         <div class="col-8">
-                            : {{ $siswa->siswa_nama }}
+                            : {{ $pengguna->pengguna_nama }}
                         </div>
                         <div class="col-4">
-                            Kelas
+                            Alamat
                         </div>
                         <div class="col-8">
-                            : {{ $siswa->kelas->kelas_nama }}
+                            : {{ $pengguna->pengguna_alamat }}
                         </div>
                         <div class="col-4">
                             No. Hp
                         </div>
                         <div class="col-8">
-                            : {{ $users->login_telepon }}
+                            : {{ $pengguna->pengguna_telepon }}
                         </div>
                         <div class="col-4">
                             E-mail
                         </div>
                         <div class="col-8">
-                            : {{ $users->login_email }}
+                            : {{ $pengguna->login->login_email }}
                         </div>
                         <div class="col-4">
                             Status
                         </div>
                         <div class="col-8">
-                            : Siswa
-                            <span class="badge rounded-pill bg-success text-light">{{ $siswa->siswa_status }}</span>
+                            : {{ $pengguna->pengguna_status }}
                         </div>
                     </div>
                 </div>

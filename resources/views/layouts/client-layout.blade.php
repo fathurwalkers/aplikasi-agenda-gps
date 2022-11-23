@@ -38,8 +38,8 @@
     <nav class="navbar navbar-dark bg-primary shadow mb-5 fixed-top" style="height:85px;">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="{{ asset('assets') }}/Logo-Tut-Wuri.png" width="45" height="45" class="d-inline-block align-top mr-1" alt=""/>
-          <h6 style=" font: size 15px; display: inline; my-auto"> Ekstrakulikuler</h6>
+          {{-- <img src="{{ asset('assets') }}/Logo-Tut-Wuri.png" width="45" height="45" class="d-inline-block align-top mr-1" alt=""/> --}}
+          <h6 style=" font: size 15px; display: inline; my-auto"> Aplikasi Agenda </h6>
         </a>
         <span class="navbar-text" style="margin-left: auto; font-size: 10px;">
             {{ $users->login_nama }}
@@ -47,7 +47,7 @@
         <ul class="navbar-nav">
             <li class="nav-item active">
               <a class="nav-item" href="{{ route('client-profile') }}">
-                  <img class="rounded-circle shadow" style="width: 2rem; margin-left: 5px;" src="{{ asset('assets') }}/{{ $siswa->siswa_foto }}" alt="">
+                  <img class="rounded-circle shadow" style="width: 2rem; margin-left: 5px;" src="{{ asset('assets') }}/{{ $pengguna->pengguna_foto }}" alt="">
               </a>
             </li>
       </div>
@@ -67,8 +67,8 @@
     <div class="container-fluid bg-primary fixed-bottom">
           <ul>
             <li><a href="{{ route('client') }}"><i class="bi bi-house-fill text-light "></i></a>Home</li>
-            <li><a href="{{ route('client-daftar-jadwal') }}"><i class="bi bi-list-stars text-light"></i></a>Jadwal</li>
-            <li><a href="{{ route('client-absen') }}"><i class="bi bi-person-check text-light "></i></a>Daftar Hadir</li>
+            <li><a href="#"><i class="bi bi-list-stars text-light"></i></a>Agenda</li>
+            <li><a href="#"><i class="bi bi-person-check text-light "></i></a>Petunjuk</li>
             <li><a href="{{ route('client-profile') }}"><i class="bi bi-person-circle text-light"></i></a>profil</li>
           </ul>
       </div>
