@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Login;
 
 class Pengguna extends Model
 {
@@ -11,4 +12,9 @@ class Pengguna extends Model
     protected $table = "pengguna";
     protected $guarded = [];
     protected $primaryKey = "id";
+
+    public function login()
+    {
+        return $this->belongsTo(Login::class);
+    }
 }
