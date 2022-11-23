@@ -12,6 +12,7 @@ use App\Models\Login;
 use App\Models\Pelaksana;
 Use App\Models\Pengguna;
 use App\Models\Bulan;
+use App\Models\Agenda;
 
 class GenerateController extends Controller
 {
@@ -78,6 +79,57 @@ class GenerateController extends Controller
 
     public function generate_agenda()
     {
-        //
+        $faker                  = Faker::create('id_ID');
+
+        $array_lat_long = [
+            ['-5.487045', '122.581907'],
+            ['-5.490170', '122.577541'],
+            ['-5.493811', '122.575308'],
+            ['-5.496801', '122.579934'],
+            ['-5.496855', '122.576307'],
+        ];
+        $array_tempat = [
+            'Kelurahan Lipu',
+            'Keraton',
+            'Kantor Walikota',
+            'Palagimata',
+            'Universitas Dayanu Ikhsanuddin'
+        ];
+
+        $array_nama_agenda = [
+            "Agenda Adat",
+            "Acara Adat",
+            "Acara Umum",
+            "Agenda Umum",
+            "Acara Pernikahan",
+        ];
+
+        $bulan = Bulan::all();
+        $array_status = [
+            'BERLANGSUNG',
+            'SELESAI',
+            'PENDING',
+        ];
+
+        $iter = 0;
+        foreach ($array_tempat as $tempat) {
+            $agenda = new Agenda;
+            $random_status = Arr::random($array_status);
+            $save_agenda = $agenda->create([
+                "agenda_nama" => $array_nama_agenda[$iter++],
+                "agenda_tempat" => $tempat,
+                "agenda_keterangan" => $faker->paragraph(4),
+                "agenda_lat" => $array_lat_long[$iter++][0],
+                "agenda_long" => $array_lat_long[$iter++][1],
+                "agenda_status" => "",
+                "agenda_penyelenggara" => $random_status,
+                "agenda_waktu" => now(),
+                "created_at" => now(),
+                "updated_at" => now()
+            ]);
+            $save_agenda->save();
+        }
+        $agenda_all = Agenda::all();
+        dd($agenda_all);
     }
 }

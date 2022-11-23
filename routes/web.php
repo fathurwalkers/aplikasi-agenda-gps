@@ -24,4 +24,5 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 });
 
 // GENERATE ROUTE
-Route::get('/generate-pengguna', [BackController::class, 'generate_pengguna'])->name('generate-pengguna');
+Route::get('/generate-pengguna', [GenerateController::class, 'generate_pengguna'])->name('generate-pengguna');
+Route::get('/generate-agenda', [GenerateController::class, 'generate_agenda'])->name('generate-agenda');
