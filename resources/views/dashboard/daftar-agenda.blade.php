@@ -54,7 +54,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <form action="{{ route('tambah-siswa') }}" method="POST" enctype="multipart/form-data">
+                                        <form action="#" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="modal-body">
 
@@ -73,27 +73,6 @@
                                                             <input type="text" class="form-control" id="siswa_nisn"
                                                                 aria-describedby="emailHelp"
                                                                 placeholder="" name="siswa_nisn">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-md-6 col-lg-6">
-                                                        <div class="form-group">
-                                                            <label for="siswa_telepon">No. HP / Telepon</label>
-                                                            <input type="text" class="form-control" id="siswa_telepon"
-                                                                aria-describedby="emailHelp"
-                                                                placeholder="" name="siswa_telepon">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6 col-md-6 col-lg-6">
-                                                        <div class="form-group">
-                                                            <label class="input-group-text" for="siswa_kelas">Kelas</label>
-                                                            <select class="form-control" id="siswa_kelas" name="siswa_kelas">
-                                                                @foreach ($kelas as $kel)
-                                                                    <option value="{{ $kel->id }}">{{ $kel->kelas_nama }}</option>
-                                                                @endforeach
-                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -164,29 +143,31 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($siswa as $item)
+                                        @foreach ($agenda as $item)
                                             <tr>
                                                 <td class="text-center">{{ $loop->iteration }}</td>
 
-                                                <td>{{ $item->siswa_telepon }}</td>
-                                                <td>{{ $item->siswa_status }}</td>
-                                                <td>{{ $item->kelas->kelas_nama }}</td>
+                                                <td>{{ $item->agenda_nama }}</td>
+                                                <td>{{ $item->agenda_tempat }}</td>
+                                                <td>{{ $item->bulan->bulan_nama }}</td>
+                                                <td>{{ date('d-M-Y / H:i', strtotime($item->agenda_waktu)) }}</td>
+                                                <td>{{ $item->agenda_penyelenggara }}</td>
 
                                                 <td>
                                                     <div class="row">
                                                         <div
                                                             class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center mx-auto">
-                                                            <button data-toggle="modal"
+                                                                <button data-toggle="modal"
                                                                 data-target="#modallihat{{ $item->id }}"
                                                                 class="btn btn-sm btn-primary mr-1">Lihat</button>
-                                                            @if ($users->login_level == 'admin')
+                                                                @if ($users->login_level == 'admin')
                                                                 <button data-toggle="modal"
                                                                     data-target="#modaltambahsiswa{{ $item->id }}"
                                                                     class="btn btn-sm btn-success mr-1">Ubah</button>
                                                                 <button data-toggle="modal"
                                                                     data-target="#hapusModal{{ $item->id }}"
                                                                     class="btn btn-sm btn-danger">Hapus</button>
-                                                            @endif
+                                                                @endif
                                                         </div>
                                                     </div>
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\GenerateController;
 
 Route::get('/', function () {
@@ -20,6 +21,9 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 
     // DASHBOARD ROUTE
     Route::get('/', [BackController::class, 'index'])->name('dashboard');
+
+    // AGENDA ROUTE
+    Route::get('/agenda/daftar-agenda', [AgendaController::class, 'daftar_agenda'])->name('daftar-agenda');
 
     // AKUN ROUTE
     Route::get('/akun/daftar-akun', [BackController::class, 'daftar_akun'])->name('daftar-akun');
