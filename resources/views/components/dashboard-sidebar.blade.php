@@ -8,7 +8,7 @@
         </a>
         <hr class="sidebar-divider my-0">
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('dashboard') }}">
+            <a class="nav-link" href="#">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -44,7 +44,7 @@
             <div id="collapseForm1" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Kelas</h6>
-                    <a class="collapse-item" href="{{ route('daftar-kelas') }}">Daftar Kelas</a>
+                    <a class="collapse-item" href="#">Daftar Kelas</a>
                     {{-- <a class="collapse-item" href="#">Tambah Mata Pelajaran</a> --}}
                 </div>
             </div>
@@ -59,7 +59,7 @@
             <div id="collapseForm2" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Jadwal</h6>
-                    <a class="collapse-item" href="{{ route('daftar-jadwal') }}">Jadwal</a>
+                    <a class="collapse-item" href="#">Jadwal</a>
                 </div>
             </div>
         </li>
@@ -73,7 +73,7 @@
             <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Ekstrakurikuler</h6>
-                    <a class="collapse-item" href="{{ route('daftar-eskul') }}">Daftar Ekstrakurikuler</a>
+                    <a class="collapse-item" href="#">Daftar Ekstrakurikuler</a>
                     {{-- <a class="collapse-item" href="#">Tambah Ekstrakurikuler</a> --}}
                 </div>
             </div>
@@ -117,9 +117,9 @@
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manajemen Pengguna</h6>
-                    <a class="collapse-item" href="{{ route('daftar-siswa') }}">Daftar Siswa</a>
-                    <a class="collapse-item" href="{{ route('daftar-pembina') }}">Daftar Pembina</a>
-                    <a class="collapse-item" href="{{ route('daftar-akun') }}">Daftar Akun</a>
+                    <a class="collapse-item" href="#">Daftar Siswa</a>
+                    <a class="collapse-item" href="#">Daftar Pembina</a>
+                    <a class="collapse-item" href="#">Daftar Akun</a>
                 </div>
             </div>
         </li>

@@ -60,14 +60,7 @@ class BackController extends Controller
         if($users->login_level == "user"){
             return redirect()->route('client')->with('status', 'Maaf anda tidak punya akses ke halaman Administrator.');
         }
-        $siswa = Siswa::all()->count();
-        $pembina = Pembina::all()->count();
-        $eskul = Eskul::all()->count();
-        return view('dashboard.index', [
-            'siswa' => $siswa,
-            'pembina' => $pembina,
-            'eskul' => $eskul,
-        ]);
+        return view('dashboard.index');
     }
 
     public function login_admin()
