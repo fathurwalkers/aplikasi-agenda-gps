@@ -4,7 +4,7 @@
             {{-- <div class="sidebar-brand-icon">
                 <img src="{{ asset('assets/ruangadmin') }}/img/logo/logo2.png">
             </div> --}}
-            <div class="sidebar-brand-text mx-3">EKSTRAKULIKULER</div>
+            <div class="sidebar-brand-text mx-3">AGENDA ADAT</div>
         </a>
         <hr class="sidebar-divider my-0">
         <li class="nav-item">
@@ -39,27 +39,13 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm1"
                 aria-expanded="true" aria-controls="collapseForm1">
                 <i class="fab fa-fw fa-wpforms"></i>
-                <span>Kelas</span>
+                <span>Informasi</span>
             </a>
             <div id="collapseForm1" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Kelola Kelas</h6>
-                    <a class="collapse-item" href="#">Daftar Kelas</a>
+                    <h6 class="collapse-header">Kelola Informasi</h6>
+                    <a class="collapse-item" href="#">Daftar Informasi</a>
                     {{-- <a class="collapse-item" href="#">Tambah Mata Pelajaran</a> --}}
-                </div>
-            </div>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm2"
-                aria-expanded="true" aria-controls="collapseForm2">
-                <i class="fab fa-fw fa-wpforms"></i>
-                <span>Jadwal</span>
-            </a>
-            <div id="collapseForm2" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Kelola Jadwal</h6>
-                    <a class="collapse-item" href="#">Jadwal</a>
                 </div>
             </div>
         </li>
@@ -68,13 +54,13 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm"
                 aria-expanded="true" aria-controls="collapseForm">
                 <i class="fab fa-fw fa-wpforms"></i>
-                <span>Ekstrakurikuler</span>
+                <span>Agenda</span>
             </a>
             <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Kelola Ekstrakurikuler</h6>
-                    <a class="collapse-item" href="#">Daftar Ekstrakurikuler</a>
-                    {{-- <a class="collapse-item" href="#">Tambah Ekstrakurikuler</a> --}}
+                    <h6 class="collapse-header">Kelola Agenda</h6>
+                    <a class="collapse-item" href="#">Daftar Agenda</a>
+                    {{-- <a class="collapse-item" href="#">Tambah Agenda</a> --}}
                 </div>
             </div>
         </li>
@@ -117,8 +103,8 @@
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manajemen Pengguna</h6>
-                    <a class="collapse-item" href="#">Daftar Siswa</a>
-                    <a class="collapse-item" href="#">Daftar Pembina</a>
+                    <a class="collapse-item" href="#">Daftar Pengguna</a>
+                    <a class="collapse-item" href="#">Daftar Pelaksana</a>
                     <a class="collapse-item" href="#">Daftar Akun</a>
                 </div>
             </div>
@@ -133,6 +119,6 @@
 
 
         <hr class="sidebar-divider">
-        <div class="version" id="version-ruangadmin"></div>
+        {{-- <div class="version" id="version-ruangadmin"></div> --}}
     </ul>
 </div>
