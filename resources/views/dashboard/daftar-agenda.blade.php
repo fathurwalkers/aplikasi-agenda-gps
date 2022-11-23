@@ -132,13 +132,13 @@
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>No.</th>
-                                            <th>Nama</th>
-                                            <th>NISN</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>No. Telepon</th>
-                                            <th>Status</th>
-                                            <th>Kelas</th>
-                                            <th>Ekstrakulikuler</th>
+
+                                            <th>Agenda</th>
+                                            <th>Tempat</th>
+                                            <th>Bulan</th>
+                                            <th>Tanggal / Waktu</th>
+                                            <th>Penyelenggara</th>
+
                                             <th>Kelola</th>
                                         </tr>
                                     </thead>

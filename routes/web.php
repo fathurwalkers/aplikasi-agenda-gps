@@ -30,6 +30,16 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 
 });
 
+Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
+    // CLIENT ROUTE
+    Route::get('/', [ClientController::class, 'index'])->name('client');
+    Route::get('/client-profile', [ClientController::class, 'client_profile'])->name('client-profile');
+    Route::post('/client-ubah-foto', [ClientController::class, 'client_ubah_foto'])->name('client-ubah-foto');
+
+});
+
 // GENERATE ROUTE
 Route::get('/generate-pengguna', [GenerateController::class, 'generate_pengguna'])->name('generate-pengguna');
+Route::get('/generate-default-pengguna', [GenerateController::class, 'generate_default_pengguna'])->name('generate-default-pengguna');
 Route::get('/generate-agenda', [GenerateController::class, 'generate_agenda'])->name('generate-agenda');
+Route::get('/generate-all', [GenerateController::class, 'generate_all'])->name('generate-all');

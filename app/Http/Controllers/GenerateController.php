@@ -118,18 +118,20 @@ class GenerateController extends Controller
             'PENDING',
         ];
 
-        $iter = 0;
+        $iter1 = 0;
+        $iter2 = 0;
+        $iter3 = 0;
         foreach ($array_tempat as $tempat) {
-            $iter =+ 1;
+            // $iter =+ 1;
             $agenda = new Agenda;
             $random_bulan = Arr::random($bulan);
             $random_status = Arr::random($array_status);
             $save_agenda = $agenda->create([
-                "agenda_nama" => $array_nama_agenda[$iter],
+                "agenda_nama" => $array_nama_agenda[$iter1++],
                 "agenda_tempat" => $tempat,
                 "agenda_keterangan" => $faker->paragraph(4),
-                "agenda_lat" => $array_lat[$iter],
-                "agenda_long" => $array_long[$iter],
+                "agenda_lat" => $array_lat[$iter2++],
+                "agenda_long" => $array_long[$iter3++],
                 "agenda_status" => "",
                 "agenda_penyelenggara" => $random_status,
                 "agenda_waktu" => now(),
@@ -140,5 +142,72 @@ class GenerateController extends Controller
             $save_agenda->save();
             // dd($save_agenda);
         }
+    }
+
+    public function generate_default_pengguna()
+    {
+        $faker                  = Faker::create('id_ID');
+        $pengguna = new Pengguna;
+        $login = new Login;
+        $array_gender = ["L", "P"];
+        $foto = "default-user.png";
+        $gender = Arr::random($array_gender);
+        $telepon = $faker->phoneNumber();
+        $status = "AKTIF";
+        $alamat = $faker->address();
+        switch ($gender) {
+            case "L":
+                $nama = $faker->firstNameMale() . " " . $faker->lastNameMale();
+                break;
+            case "P":
+                $nama = $faker->firstNameFemale() . " " . $faker->lastNameFemale();
+                break;
+        }
+
+        // GENERATE DATA LOGIN
+        $token = Str::random(16);
+        $level = "user";
+        $hashPassword = Hash::make('12345', [
+            'rounds' => 12,
+        ]);
+        $hashToken = Hash::make($token, [
+            'rounds' => 12,
+        ]);
+        $username = "example_pengguna";
+        $save_login = $login->create([
+            'login_nama'        => $nama,
+            'login_username'    => $username,
+            'login_password'    => $hashPassword,
+            'login_email'       => $faker->email(),
+            'login_telepon'     => $telepon,
+            'login_token'       => $hashToken,
+            'login_level'       => $level,
+            'login_status'      => "verified",
+            'created_at'        => now(),
+            'updated_at'        => now()
+        ]);
+        $save_login->save();
+
+        // GENERATE DATA PENGGUNA
+        $save_pengguna = $pengguna->create([
+            'pengguna_nama' => $nama,
+            'pengguna_jeniskelamin' => $gender,
+            'pengguna_alamat' => $alamat,
+            'pengguna_telepon' => $telepon,
+            'pengguna_foto' => $foto,
+            'pengguna_status' => $status,
+            'login_id' => $save_login->id,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        $save_pengguna->save();
+    }
+
+    public function generate_all()
+    {
+        $this->generate_pengguna();
+        $this->generate_default_pengguna();
+        $this->generate_agenda();
+        return redirect()->route('dashboard')->with('status', 'Berhasil melakukan Generate All Data.');
     }
 }
