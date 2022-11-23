@@ -12,6 +12,7 @@ use App\Models\Login;
 use App\Models\Pelaksana;
 Use App\Models\Pengguna;
 use App\Models\Bulan;
+use App\Models\Kategori;
 
 class DatabaseSeeder extends Seeder
 {
@@ -141,6 +142,26 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now()
             ]);
             $save_bulan->save();
+        }
+
+        // -----------------------------------------------------------
+
+        // -----------------------------------------------------------
+
+        // GENERATE KATEGORI
+        $array_kategori = [
+            'Adat',
+            'Umum'
+        ];
+
+        foreach ($array_kategori as $kat) {
+            $kategori = new Kategori;
+            $save_kategori = $kategori->create([
+                'kategori_nama' => $kat,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_kategori->save();
         }
 
     }

@@ -8,14 +8,17 @@ class CreateKategorisTable extends Migration
 {
     public function up()
     {
-        Schema::create('kategoris', function (Blueprint $table) {
+        Schema::create('kategori', function (Blueprint $table) {
             $table->id();
+
+            $table->string('kategori_nama')->nullable();
+
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('kategoris');
+        Schema::dropIfExists('kategori');
     }
 }
