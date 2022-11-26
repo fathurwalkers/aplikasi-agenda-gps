@@ -14,7 +14,7 @@
         <a href="{{ route('client') }}">
             <i class="bi bi-arrow-left-circle" style="font-size: 2rem; margin-right: 30px;"></i>
         </a>
-        <h5 style="display: inline-block;">Daftar Agenda</h5>
+        <h5 style="display: inline-block;">Informasi Agenda</h5>
     </div>
 @endsection
 
@@ -32,7 +32,7 @@
     <div class="container">
         <div class="card text-center mb-5 shadow-sm mt-4">
             <div class="card-header">
-                Daftar Agenda
+                Informasi Agenda
             </div>
             <div class="card-body">
                 <div class="container">
@@ -53,6 +53,9 @@
                             <h5 class="card-title">{{ $agenda->agenda_tempat }}</h5>
                             <p class="card-text h6">{{ date('d, M Y', strtotime($agenda->agenda_waktu)) }}
                                 ({{ date('H:i', strtotime($agenda->agenda_waktu)) }})</p>
+                            <p class="card-text h6">
+                                {{ $agenda->agenda_keterangan }}
+                            </p>
                         </div>
 
                         <div class="col-12 mb-1 shadow-sm">
@@ -75,13 +78,14 @@
         //     zoom: 13
         // });
         let mymap = L.map('mapid').setView([{{ $agenda->agenda_lat }}, {{ $agenda->agenda_long }}], 13);
-        // let mymap = L.map('mapid').setView([5.487, 122.5], 13);
+        // let mymap = L.map('mapid').setView([-5.47486, 122.58998], 13);
 
         // let mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(mymap);
 
-        let marker = L.marker([{{ $agenda->agenda_lat }}, {{ $agenda->agenda_long }}]).addTo(map);
+        let marker = L.marker([{{ $agenda->agenda_lat }}, {{ $agenda->agenda_long }}]).addTo(mymap);
+        // let marker = L.marker([-5.47486, 122.58998]).addTo(mymap);
 
     </script>
 @endpush
