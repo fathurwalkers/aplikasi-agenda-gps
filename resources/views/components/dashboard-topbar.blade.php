@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <h5 class="my-auto ml-2 text-white">
-                    <b> SISTEM INFORMASI EKSTRAKULIKULER SMA NEGERI 2 BAUBAU </b>
+                    <b> APLIKASI AGENDA KEGIATAN ADAT </b>
                 </h5>
             </div>
         </div>

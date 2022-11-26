@@ -1,12 +1,20 @@
 @extends('layouts.dashboard-layout')
 
-@section('title', 'Dashboard - Daftar Siswa')
+@section('title', 'Dashboard - Daftar Agenda')
 
 @push('css')
     <link href="{{ asset('datatables') }}/datatables.min.css" rel="stylesheet">
+
+    <style>
+        table, tr, td {
+            border: none!important;
+            border-color: none!important;
+        }
+    </style>
+
 @endpush
 
-@section('content-title', 'Dashboard - Daftar Siswa')
+@section('content-title', 'Dashboard - Daftar Agenda')
 
 {{-- ------------------- main content ------------------- --}}
 @section('main-content')
@@ -30,14 +38,14 @@
                             <div class="col-sm-6 col-md-6 col-lg-6">
                                 <h4>
                                     <b>
-                                        Daftar Siswa
+                                        Daftar Agenda
                                     </b>
                                 </h4>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-end">
                                 <button type="button" class="btn btn-md btn-info" data-toggle="modal"
                                     data-target="#modaltambah">
-                                    Tambah Siswa
+                                    Tambah Agenda
                                 </button>
                             </div>
 
@@ -48,7 +56,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabelLogout">
-                                                Tambah Siswa
+                                                Tambah Agenda
                                             </h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
@@ -180,7 +188,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModalLabelLogout">
-                                                                        Modal Title
+                                                                        Informasi Agenda
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -196,9 +204,37 @@
                                                                     <br />
                                                                     <div class="row">
                                                                         <div class="col-sm-12 col-md-12 col-lg-12">
-                                                                            <p>
-                                                                                p
-                                                                            </p>
+
+                                                                            <table class="table table-borderless" cellspacing="0" cellpadding="0">
+
+                                                                                <tr>
+                                                                                    <td>Agenda </td>
+                                                                                    <td> : {{ $item->agenda_nama }}</td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td>Tempat </td>
+                                                                                    <td> : {{ $item->agenda_tempat }}</td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td>Bulan </td>
+                                                                                    <td> : {{ $item->bulan->bulan_nama }}</td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td>Bulan </td>
+                                                                                    <td> : {{ date('d-M-Y / H:i', strtotime($item->agenda_waktu)) }}</td>
+                                                                                </tr>
+
+
+                                                                                <tr>
+                                                                                    <td>Bulan </td>
+                                                                                    <td> : {{ $item->kategori->kategori_nama }}</td>
+                                                                                </tr>
+
+                                                                            </table>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
