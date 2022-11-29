@@ -88,14 +88,24 @@ class GenerateController extends Controller
             '-5.47540',
             '-5.47540',
             '-5.47540',
-            '-5.47540'
+            '-5.47540',
+            '-5.47540',
+            '-5.47540',
+            '-5.47540',
+            '-5.47540',
+            '-5.47540',
         ];
         $array_long = [
             '122.58787',
             '122.58787',
             '122.58787',
             '122.58787',
-            '122.58787'
+            '122.58787',
+            '122.58787',
+            '122.58787',
+            '122.58787',
+            '122.58787',
+            '122.58787',
         ];
 
         $array_tempat = [
@@ -103,7 +113,12 @@ class GenerateController extends Controller
             'Keraton',
             'Kantor Walikota',
             'Palagimata',
-            'Universitas Dayanu Ikhsanuddin'
+            'Universitas Dayanu Ikhsanuddin',
+            'Kelurahan Lipu',
+            'Kelurahan Lipu',
+            'Kelurahan Lipu',
+            'Kelurahan Lipu',
+            'Kelurahan Lipu',
         ];
 
         $array_nama_agenda = [
@@ -111,7 +126,11 @@ class GenerateController extends Controller
             "Acara Adat",
             "Acara Umum",
             "Agenda Umum",
-            "Acara Pernikahan"
+            "Acara Pernikahan",
+            "Acara Pernikahan",
+            "Acara Pernikahan",
+            "Agenda Adat",
+            "Agenda Adat",
         ];
 
         $array_status = [
@@ -211,7 +230,6 @@ class GenerateController extends Controller
     {
         $this->generate_pengguna();
         $this->generate_default_pengguna();
-        $this->generate_agenda();
         return redirect()->route('dashboard')->with('status', 'Berhasil melakukan Generate All Data.');
     }
 }
