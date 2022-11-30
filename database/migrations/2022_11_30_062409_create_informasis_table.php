@@ -6,14 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateInformasisTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('informasis', function (Blueprint $table) {
+        Schema::create('informasi', function (Blueprint $table) {
             $table->id();
 
             $table->string('informasi_judul')->nullable();
@@ -28,13 +23,8 @@ class CreateInformasisTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('informasis');
+        Schema::dropIfExists('informasi');
     }
 }
