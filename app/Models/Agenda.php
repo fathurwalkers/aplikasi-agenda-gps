@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Bulan;
 use App\Models\Kategori;
+use App\Models\Informasi;
 
 class Agenda extends Model
 {
@@ -22,5 +23,10 @@ class Agenda extends Model
     public function kategori()
     {
         return $this->belongsTo(Kategori::class);
+    }
+
+    public function informasi()
+    {
+        return $this->hasMany(Informasi::class);
     }
 }
