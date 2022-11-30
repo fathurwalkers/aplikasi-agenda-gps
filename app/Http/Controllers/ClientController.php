@@ -13,6 +13,7 @@ use App\Models\Pelaksana;
 Use App\Models\Pengguna;
 use App\Models\Agenda;
 use App\Models\Bulan;
+use App\Models\Kategori;
 
 class ClientController extends Controller
 {
@@ -57,12 +58,19 @@ class ClientController extends Controller
         $users = Login::find($session_users->id);
         $pengguna = Pengguna::where('login_id', $users->id)->first();
         $agenda = Agenda::find($agenda_id);
-        // dd($agenda);
         return view('client.client-lihat-agenda', [
             'users' => $users,
             'pengguna' => $pengguna,
             'agenda' => $agenda,
         ]);
+    }
+
+    public function client_kategori_agenda()
+    {
+        $session_users = session('data_login');
+        $users = Login::find($session_users->id);
+        $kategori = Kategori::all();
+
     }
 
     public function client_profile()

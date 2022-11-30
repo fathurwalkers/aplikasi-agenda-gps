@@ -24,7 +24,9 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 
     // AGENDA ROUTE
     Route::get('/agenda/daftar-agenda', [AgendaController::class, 'daftar_agenda'])->name('daftar-agenda');
+    Route::post('/agenda/tambah-agenda', [AgendaController::class, 'tambah_agenda'])->name('tambah-agenda');
     Route::post('/agenda/hapus-agenda/{id}', [AgendaController::class, 'hapus_agenda'])->name('hapus-agenda');
+    Route::post('/agenda/ubah-agenda/{id}', [AgendaController::class, 'ubah_agenda'])->name('ubah-agenda');
 
     // AKUN ROUTE
     Route::get('/akun/daftar-akun', [BackController::class, 'daftar_akun'])->name('daftar-akun');

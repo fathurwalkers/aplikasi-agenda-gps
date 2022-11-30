@@ -11,7 +11,7 @@
 
 @section('tombol-keluar')
     <div class="tombol-keluar mt-2">
-        <a href="{{ route('client') }}">
+        <a href="{{ route('client-daftar-agenda') }}">
             <i class="bi bi-arrow-left-circle" style="font-size: 2rem; margin-right: 30px;"></i>
         </a>
         <h5 style="display: inline-block;">Informasi Agenda</h5>
