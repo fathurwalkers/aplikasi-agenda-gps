@@ -13,6 +13,7 @@ use App\Models\Pelaksana;
 Use App\Models\Pengguna;
 use App\Models\Bulan;
 use App\Models\Agenda;
+use App\Models\Informasi;
 
 class AgendaController extends Controller
 {
@@ -25,5 +26,16 @@ class AgendaController extends Controller
             'users' => $users,
             'agenda' => $agenda,
         ]);
+    }
+
+    public function hapus_agenda(Request $request, $id)
+    {
+        $agenda_id = $id;
+        $agenda = Agenda::find($agenda_id);
+
+        $informasi = Informasi::where('agenda_id', $agenda->id)->get();
+        dump($agenda);
+        dump($informasi);
+        die;
     }
 }

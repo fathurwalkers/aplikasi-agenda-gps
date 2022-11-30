@@ -143,28 +143,39 @@ class GenerateController extends Controller
         $iter2 = 0;
         $iter3 = 0;
         foreach ($array_tempat as $tempat) {
-            // $iter =+ 1;
-            $agenda = new Agenda;
-            $random_bulan = Arr::random($bulan);
-            $random_kategori = Arr::random($kategori);
-            $random_status = Arr::random($array_status);
-            $save_agenda = $agenda->create([
-                "agenda_nama" => $array_nama_agenda[$iter1++],
-                "agenda_tempat" => $tempat,
-                "agenda_keterangan" => $faker->paragraph(4),
-                "agenda_lat" => $array_lat[$iter2++],
-                "agenda_long" => $array_long[$iter3++],
-                "agenda_status" => "",
-                "agenda_penyelenggara" => $random_status,
-                "agenda_waktu" => now(),
-                "bulan_id" => $random_bulan["id"],
-                "kategori_id" => $random_kategori["id"],
-                "created_at" => now(),
-                "updated_at" => now()
-            ]);
-            $save_agenda->save();
-            // dd($save_agenda);
+            foreach ($array_nama_agenda as $nama_agenda) {
+                foreach ($array_lat as $lat) {
+                    foreach ($array_long as $long) {
+                        // $iter =+ 1;
+                        $agenda = new Agenda;
+                        $random_bulan = Arr::random($bulan);
+                        $random_kategori = Arr::random($kategori);
+                        $random_status = Arr::random($array_status);
+                        $save_agenda = $agenda->create([
+                            // "agenda_nama" => $array_nama_agenda[$iter1++],
+                            "agenda_nama" => $nama_agenda,
+                            "agenda_tempat" => $tempat,
+                            "agenda_keterangan" => $faker->paragraph(4),
+                            // "agenda_lat" => $array_lat[$iter2++],
+                            "agenda_lat" => $lat,
+                            // "agenda_long" => $array_long[$iter3++],
+                            "agenda_long" => $long,
+                            "agenda_status" => $random_status,
+                            "agenda_penyelenggara" => "Kelurahan Lipu",
+                            "agenda_waktu" => now(),
+                            "bulan_id" => $random_bulan["id"],
+                            "kategori_id" => $random_kategori["id"],
+                            "created_at" => now(),
+                            "updated_at" => now()
+                        ]);
+                        $save_agenda->save();
+                        // dd($save_agenda);
+                    }
+                }
+            }
         }
+        $agenda = Agenda::all();
+        dd($agenda);
     }
 
     public function generate_default_pengguna()

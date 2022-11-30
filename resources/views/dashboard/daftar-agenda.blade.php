@@ -223,13 +223,13 @@
                                                                                 </tr>
 
                                                                                 <tr>
-                                                                                    <td>Bulan </td>
+                                                                                    <td>Tanggal / Waktu </td>
                                                                                     <td> : {{ date('d-M-Y / H:i', strtotime($item->agenda_waktu)) }}</td>
                                                                                 </tr>
 
 
                                                                                 <tr>
-                                                                                    <td>Bulan </td>
+                                                                                    <td>Kategori Agenda </td>
                                                                                     <td> : {{ $item->kategori->kategori_nama }}</td>
                                                                                 </tr>
 
@@ -264,15 +264,52 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <p>Hapus Dialog ?
-                                                                    </p>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                                                            <p>
+                                                                                Apakah anda yakin ingin menghapus Agenda ini?
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                                                            <table class="table table-borderless" cellspacing="0" cellpadding="0">
+
+                                                                                <tr>
+                                                                                    <td>Agenda </td>
+                                                                                    <td> : {{ $item->agenda_nama }}</td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td>Tempat </td>
+                                                                                    <td> : {{ $item->agenda_tempat }}</td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td>Bulan </td>
+                                                                                    <td> : {{ $item->bulan->bulan_nama }}</td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td>Tanggal / Waktu </td>
+                                                                                    <td> : {{ date('d-M-Y / H:i', strtotime($item->agenda_waktu)) }}</td>
+                                                                                </tr>
+
+
+                                                                                <tr>
+                                                                                    <td>Kategori Agenda </td>
+                                                                                    <td> : {{ $item->kategori->kategori_nama }}</td>
+                                                                                </tr>
+
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="modal-footer">
 
-                                                                    <form action="#"
-                                                                        method="POST">
+                                                                    <form action="{{ route('hapus-agenda', $item->id) }}" method="POST">
                                                                         @csrf
-                                                                        <input type="hidden" name="logoutrequest">
+                                                                        <input type="hidden" name="hapusrequest">
                                                                         <button type="button" class="btn btn-warning"
                                                                             data-dismiss="modal">Batalkan</button>
                                                                         <button type="submit"
