@@ -52,7 +52,7 @@
         </div>
 
         <div class="col-10 mb-4 btn shadow">
-            <a href="#">
+            <a href="{{ route('client-kategori-agenda') }}">
                 <div class="card border-danger ">
                     <div class="card-body text-left">
                         <button type="button" class="btn btn-danger btn-sm">

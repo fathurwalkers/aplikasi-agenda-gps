@@ -23,19 +23,21 @@
     </div>
     <div class="row row-cols-1  justify-content-center">
 
-        <div class="col-10 mb-4 btn shadow ">
-            <a href="{{ route('client-daftar-agenda') }}">
-                <div class="card border-primary ">
-                    <div class="card-body text-left">
-                        <button type="button" class="btn btn-primary btn-sm">
-                            <i class="bi bi-box-arrow-in-right" style="font-size: 1rem; display:inline-block;"></i>
-                        </button>
-                        <h6 class="card-title font-weight-bold"
-                            style="font-size: 1rem; display: inline-block; margin-left: 40px;">AGENDA</h6>
+        @foreach ($kategori as $item)
+            <div class="col-10 mb-4 btn shadow ">
+                <a href="{{ route('client-daftar-agenda-kategori', $item->id) }}">
+                    <div class="card border-primary ">
+                        <div class="card-body text-left">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-in-right" style="font-size: 1rem; display:inline-block;"></i>
+                            </button>
+                            <h6 class="card-title font-weight-bold"
+                                style="font-size: 1rem; display: inline-block; margin-left: 40px;">{{ $item->kategori_nama }}</h6>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        @endforeach
 
     </div>
 @endsection

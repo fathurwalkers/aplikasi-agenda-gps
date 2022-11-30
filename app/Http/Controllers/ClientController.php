@@ -69,8 +69,29 @@ class ClientController extends Controller
     {
         $session_users = session('data_login');
         $users = Login::find($session_users->id);
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
         $kategori = Kategori::all();
+        return view('client.client-kategori-agenda', [
+            'users' => $users,
+            'pengguna' => $pengguna,
+            'kategori' => $kategori,
+        ]);
+    }
 
+    public function client_daftar_agenda_kategori($id)
+    {
+        $kategori_id = $id;
+        $kategori = Kategori::find($kategori_id);
+        $session_users = session('data_login');
+        $users = Login::find($session_users->id);
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
+        $agenda = Agenda::where('kategori_id', $kategori->id)->get();
+        return view('client.client-daftar-agenda', [
+            'users' => $users,
+            'pengguna' => $pengguna,
+            'agenda' => $agenda,
+            'kategori' => $kategori,
+        ]);
     }
 
     public function client_profile()

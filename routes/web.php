@@ -6,6 +6,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\GenerateController;
+use App\Http\Controllers\InformasiController;
 
 Route::get('/', function () {
     return redirect('/login-admin');
@@ -25,8 +26,14 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     // AGENDA ROUTE
     Route::get('/agenda/daftar-agenda', [AgendaController::class, 'daftar_agenda'])->name('daftar-agenda');
     Route::post('/agenda/tambah-agenda', [AgendaController::class, 'tambah_agenda'])->name('tambah-agenda');
-    Route::post('/agenda/hapus-agenda/{id}', [AgendaController::class, 'hapus_agenda'])->name('hapus-agenda');
     Route::post('/agenda/ubah-agenda/{id}', [AgendaController::class, 'ubah_agenda'])->name('ubah-agenda');
+    Route::post('/agenda/hapus-agenda/{id}', [AgendaController::class, 'hapus_agenda'])->name('hapus-agenda');
+
+    // INFORMASI ROUTE
+    Route::get('/informasi/daftar-informasi', [InformasiController::class, 'daftar_informasi'])->name('daftar-informasi');
+    Route::post('/informasi/tambah-informasi', [InformasiController::class, 'tambah_informasi'])->name('tambah-informasi');
+    Route::post('/informasi/ubah-informasi/{id}', [InformasiController::class, 'ubah_informasi'])->name('ubah-informasi');
+    Route::post('/informasi/hapus-informasi/{id}', [InformasiController::class, 'hapus_informasi'])->name('hapus-informasi');
 
     // AKUN ROUTE
     Route::get('/akun/daftar-akun', [BackController::class, 'daftar_akun'])->name('daftar-akun');
@@ -43,10 +50,15 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::get('/client-daftar-agenda', [ClientController::class, 'client_daftar_agenda'])->name('client-daftar-agenda');
     Route::get('/client-lihat-agenda/{id}', [ClientController::class, 'client_lihat_agenda'])->name('client-lihat-agenda');
 
+    // KATEGORI AGENDA
+    Route::get('/client-kategori-agenda', [ClientController::class, 'client_kategori_agenda'])->name('client-kategori-agenda');
+    Route::get('/client-daftar-agenda-kategori/{id}', [ClientController::class, 'client_daftar_agenda_kategori'])->name('client-daftar-agenda-kategori');
+
 });
 
 // GENERATE ROUTE
 Route::get('/generate-pengguna', [GenerateController::class, 'generate_pengguna'])->name('generate-pengguna');
 Route::get('/generate-default-pengguna', [GenerateController::class, 'generate_default_pengguna'])->name('generate-default-pengguna');
 Route::get('/generate-agenda', [GenerateController::class, 'generate_agenda'])->name('generate-agenda');
+Route::get('/generate-informasi', [GenerateController::class, 'generate_informasi'])->name('generate-informasi');
 Route::get('/generate-all', [GenerateController::class, 'generate_all'])->name('generate-all');

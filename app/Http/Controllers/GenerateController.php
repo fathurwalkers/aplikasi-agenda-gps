@@ -13,6 +13,7 @@ use App\Models\Pelaksana;
 Use App\Models\Pengguna;
 use App\Models\Bulan;
 use App\Models\Agenda;
+use App\Models\Informasi;
 use App\Models\Kategori;
 
 class GenerateController extends Controller
@@ -227,11 +228,38 @@ class GenerateController extends Controller
         $save_pengguna->save();
     }
 
+    public function generate_informasi()
+    {
+        $faker                  = Faker::create('id_ID');
+        $bulan = Bulan::all()->toArray();
+        $kategori = Kategori::all()->toArray();
+        $agenda = Agenda::all()->toArray();
+        for ($i=0; $i < 20; $i++) {
+            $informasi = new Informasi;
+
+            $informasi_judul = $faker->sentence(5,false);
+            $informasi_isi = $faker->paragraph(2);
+            $informasi_status = "AKTIF";
+            $random_agenda = Arr::random($agenda);
+            $save_informasi = $informasi->create([
+                "informasi_judul" => $informasi_judul,
+                "informasi_isi" => $informasi_isi,
+                "informasi_status" => $informasi_status,
+                "informasi_waktu" => now(),
+                "agenda_id" => intval($random_agenda["id"]),
+                "created_at" => now(),
+                "updated_at" => now()
+            ]);
+            $save_informasi->save();
+        }
+    }
+
     public function generate_all()
     {
         $this->generate_pengguna();
         $this->generate_default_pengguna();
         $this->generate_agenda();
+        $this->generate_informasi();
         return redirect()->route('dashboard')->with('status', 'Berhasil melakukan Generate All Data.');
     }
 }
