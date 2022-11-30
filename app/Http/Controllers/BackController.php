@@ -9,7 +9,8 @@ use Illuminate\Support\Str;
 use Faker\Factory as Faker;
 use Illuminate\Support\Arr;
 use App\Models\Login;
-use App\Models\Pelaksana;
+use App\Models\Informasi;
+use App\Models\Agenda;
 Use App\Models\Pengguna;
 use App\Models\Bulan;
 
@@ -55,10 +56,19 @@ class BackController extends Controller
     {
         $session_users = session('data_login');
         $users = Login::find($session_users->id);
+        $agenda = Agenda::all()->count();
+        $informasi = Informasi::all()->count();
+        $pengguna = Pengguna::all()->count();
+        $pengguna = Pengguna::all()->count();
         if($users->login_level == "user"){
             return redirect()->route('client')->with('status', 'Maaf anda tidak punya akses ke halaman Administrator.');
         }
-        return view('dashboard.index');
+        return view('dashboard.index', [
+            'users'=> $users,
+            'agenda'=> $agenda,
+            'informasi'=> $informasi,
+            'pengguna'=> $pengguna,
+        ]);
     }
 
     public function login_admin()

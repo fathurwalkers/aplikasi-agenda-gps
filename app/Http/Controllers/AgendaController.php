@@ -32,10 +32,22 @@ class AgendaController extends Controller
     {
         $agenda_id = $id;
         $agenda = Agenda::find($agenda_id);
-
         $informasi = Informasi::where('agenda_id', $agenda->id)->get();
-        dump($agenda);
-        dump($informasi);
-        die;
+        if ($informasi->count() !== 0) {
+            foreach ($informasi as $info) {
+                $find_info = Informasi::find($info->id);
+                $hapus_info = $find_info->forceDelete();
+            }
+        }
+        $agenda_nama = $agenda->agenda_nama;
+        $agenda_tempat = $agenda->agenda_tempat;
+        $hapus_agenda = $agenda->forceDelete();
+        if ($hapus_agenda == true) {
+            $alert = "Agenda Kegiatan (" . $agenda_nama . ") di (" . $agenda_tempat . ") telah berhasil dihapus.";
+            return redirect()->route('daftar-agenda')->with('status', $alert);
+        } else {
+            $alert = "Agenda Kegiatan (" . $agenda_nama . ") di (" . $agenda_tempat . ") gagal dihapus.";
+            return redirect()->route('daftar-agenda')->with('status', $alert);
+        }
     }
 }

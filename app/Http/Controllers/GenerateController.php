@@ -166,8 +166,6 @@ class GenerateController extends Controller
             $save_agenda->save();
             // dd($save_agenda);
         }
-        $agenda = Agenda::all();
-        dd($agenda);
     }
 
     public function generate_default_pengguna()
@@ -233,6 +231,7 @@ class GenerateController extends Controller
     {
         $this->generate_pengguna();
         $this->generate_default_pengguna();
+        $this->generate_agenda();
         return redirect()->route('dashboard')->with('status', 'Berhasil melakukan Generate All Data.');
     }
 }
