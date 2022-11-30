@@ -12,4 +12,9 @@ class Informasi extends Model
     protected $table = "informasi";
     protected $guarded = [];
     protected $primaryKey = "id";
+
+    public function agenda()
+    {
+        return $this->belongsTo(Agenda::class);
+    }
 }
