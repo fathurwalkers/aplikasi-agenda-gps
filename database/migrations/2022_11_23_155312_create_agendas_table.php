@@ -13,7 +13,7 @@ class CreateAgendasTable extends Migration
 
             $table->string('agenda_nama')->nullable();
             $table->string('agenda_tempat')->nullable();
-            $table->text('agenda_keterangan')->nullable();
+            $table->longText('agenda_keterangan')->nullable();
             $table->string('agenda_lat')->nullable();
             $table->string('agenda_long')->nullable();
             $table->string('agenda_status')->nullable();
