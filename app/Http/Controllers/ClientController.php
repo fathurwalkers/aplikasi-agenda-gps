@@ -14,6 +14,7 @@ Use App\Models\Pengguna;
 use App\Models\Agenda;
 use App\Models\Bulan;
 use App\Models\Kategori;
+use App\Models\Informasi;
 
 class ClientController extends Controller
 {
@@ -48,6 +49,19 @@ class ClientController extends Controller
             'users' => $users,
             'pengguna' => $pengguna,
             'agenda' => $agenda,
+        ]);
+    }
+
+    public function client_daftar_informasi()
+    {
+        $session_users = session('data_login');
+        $users = Login::find($session_users->id);
+        $pengguna = Pengguna::where('login_id', $users->id)->first();
+        $informasi = Informasi::all();
+        return view('client.client-daftar-informasi', [
+            'users' => $users,
+            'pengguna' => $pengguna,
+            'informasi' => $informasi,
         ]);
     }
 

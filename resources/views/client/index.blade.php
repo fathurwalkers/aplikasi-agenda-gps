@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-10 mb-4 btn shadow">
-            <a href="#">
+            <a href="{{ route('client-daftar-informasi') }}">
                 <div class="card border-warning  ">
                     <div class="card-body text-left">
                         <button type="button" class="btn btn-warning btn-sm">

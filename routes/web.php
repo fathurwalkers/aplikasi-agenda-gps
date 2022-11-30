@@ -50,6 +50,9 @@ Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     Route::get('/client-daftar-agenda', [ClientController::class, 'client_daftar_agenda'])->name('client-daftar-agenda');
     Route::get('/client-lihat-agenda/{id}', [ClientController::class, 'client_lihat_agenda'])->name('client-lihat-agenda');
 
+    // DAFTAR INFORMASI
+    Route::get('/client-daftar-informasi', [ClientController::class, 'client_daftar_informasi'])->name('client-daftar-informasi');
+
     // KATEGORI AGENDA
     Route::get('/client-kategori-agenda', [ClientController::class, 'client_kategori_agenda'])->name('client-kategori-agenda');
     Route::get('/client-daftar-agenda-kategori/{id}', [ClientController::class, 'client_daftar_agenda_kategori'])->name('client-daftar-agenda-kategori');
