@@ -102,7 +102,7 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                                    {{-- <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
                                                             <label for="agenda_kategori">Kategori Agenda : </label>
                                                             <select class="form-control" id="exampleFormControlSelect1"
@@ -113,8 +113,8 @@
                                                                 @endforeach
                                                             </select>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                                    </div> --}}
+                                                    <div class="col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
                                                             <label for="agenda_bulan">Bulan : </label>
                                                             <select class="form-control" id="exampleFormControlSelect1"
@@ -213,7 +213,6 @@
                                             <th>Tempat</th>
                                             <th>Bulan</th>
                                             <th>Tanggal / Waktu</th>
-                                            <th>Kategori</th>
 
                                             <th>Kelola</th>
                                         </tr>
@@ -227,7 +226,6 @@
                                                 <td>{{ $item->agenda_tempat }}</td>
                                                 <td>{{ $item->bulan->bulan_nama }}</td>
                                                 <td>{{ date('d-M-Y / H:i', strtotime($item->agenda_waktu)) }}</td>
-                                                <td>{{ $item->kategori->kategori_nama }}</td>
 
                                                 <td>
                                                     <div class="row">
@@ -444,7 +442,7 @@
                                                                         </div>
 
                                                                         <div class="row">
-                                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                            {{-- <div class="col-sm-6 col-md-6 col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label for="agenda_kategori">Kategori Agenda : </label>
                                                                                     <select class="form-control" id="exampleFormControlSelect1"
@@ -456,8 +454,8 @@
                                                                                         @endforeach
                                                                                     </select>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                            </div> --}}
+                                                                            <div class="col-sm-12 col-md-12 col-lg-12">
                                                                                 <div class="form-group">
                                                                                     <label for="agenda_bulan">Bulan : </label>
                                                                                     <select class="form-control" id="exampleFormControlSelect1"

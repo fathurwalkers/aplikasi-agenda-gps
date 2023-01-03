@@ -87,7 +87,7 @@ class AgendaController extends Controller
             "agenda_penyelenggara" => $agenda_penyelenggara,
             "agenda_waktu" => $agenda_tanggal_waktu,
             "bulan_id" => intval($agenda_bulan),
-            "kategori_id" => intval($agenda_kategori),
+            "kategori_id" => 1,
             "created_at" => now(),
             "updated_at" => now()
         ]);
@@ -131,7 +131,7 @@ class AgendaController extends Controller
             "agenda_penyelenggara" => $agenda_penyelenggara,
             "agenda_waktu" => $agenda_tanggal_waktu,
             "bulan_id" => intval($agenda_bulan),
-            "kategori_id" => intval($agenda_kategori),
+            "kategori_id" => 1,
             "updated_at" => now()
         ]);
         if ($update_agenda == true) {
