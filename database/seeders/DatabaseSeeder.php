@@ -138,6 +138,7 @@ class DatabaseSeeder extends Seeder
             $bulan = new Bulan;
             $save_bulan = $bulan->create([
                 'bulan_nama' => $bul,
+                'bulan_keterangan' => "INFO",
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

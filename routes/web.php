@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\GenerateController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\BulanController;
 
 Route::get('/', function () {
     return redirect('/login-admin');

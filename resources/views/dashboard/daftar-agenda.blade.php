@@ -118,12 +118,23 @@
                                                         <div class="form-group">
                                                             <label for="agenda_bulan">Bulan : </label>
                                                             <select class="form-control" id="exampleFormControlSelect1"
-                                                            name="agenda_bulan">
+                                                            name="agenda_bulan" onchange="var optionVal = $(this).find(':selected').val(); doSomething(optionVal)">
                                                                 @foreach ($bulan as $bul)
-                                                                    <option value="{{ $bul->id }}">{{ $bul->bulan_nama }}
+                                                                    <option id="{{ $bul->id }}" value="{{ $bul->id }}">{{ $bul->bulan_nama }}
                                                                     </option>
                                                                 @endforeach
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group">
+                                                            <label for="bulan_keterangan">Keterangan Bulan : </label>
+                                                            <input type="text" class="form-control"
+                                                                id="bulan_keterangan" aria-describedby="emailHelp"
+                                                                name="bulan_keterangan" value="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -595,5 +606,13 @@
         mymap.on('click', onMapClick);
         // let marker = L.marker([-5.47486, 122.58998]).addTo(mymap);
 
+    </script>
+
+    <script>
+        function doSomething(param) {
+            if ($(param.selected)) {
+                console.log(param);
+            }
+        }
     </script>
 @endpush

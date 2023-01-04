@@ -58,9 +58,10 @@
                                                 <td>
                                                     <div class="row">
                                                         <div
-                                                            class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center mx-auto">
-                                                            <button href="#"
-                                                                class="btn btn-sm btn-primary mr-1">Lihat</button>
+                                                            class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center mx-auto btn-group">
+                                                            <button href="#" class="btn btn-sm btn-success mr-1">Lihat</button>
+                                                            <button href="#" class="btn btn-sm btn-info mr-1">Ubah</button>
+                                                            <button href="#" class="btn btn-sm btn-danger mr-1">Hapus</button>
                                                         </div>
                                                     </div>
                                                 </td>

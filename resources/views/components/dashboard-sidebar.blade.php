@@ -58,7 +58,7 @@
             <div id="collapseForm2" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manajemen Bulan</h6>
-                    <a class="collapse-item" href="#">Daftar Bulan</a>
+                    <a class="collapse-item" href="{{ route('daftar-bulan') }}">Daftar Bulan</a>
                 </div>
             </div>
         </li>
