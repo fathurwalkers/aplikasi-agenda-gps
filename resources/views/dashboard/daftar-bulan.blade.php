@@ -48,7 +48,7 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($akun as $item)
+                                        @foreach ($bulan as $item)
                                             <tr>
                                                 <td class="text-center">{{ $loop->iteration }}</td>
 
