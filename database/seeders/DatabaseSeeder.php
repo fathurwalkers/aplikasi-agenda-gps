@@ -134,11 +134,12 @@ class DatabaseSeeder extends Seeder
             "Dzulhijah",
         ];
 
+        $inccc = 1;
         foreach ($array_bulan as $bul) {
             $bulan = new Bulan;
             $save_bulan = $bulan->create([
                 'bulan_nama' => $bul,
-                'bulan_keterangan' => "INFO",
+                'bulan_keterangan' => "INFO" . $inccc++,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

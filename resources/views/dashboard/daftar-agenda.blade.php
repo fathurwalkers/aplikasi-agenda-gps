@@ -134,7 +134,7 @@
                                                             <label for="bulan_keterangan">Keterangan Bulan : </label>
                                                             <input type="text" class="form-control"
                                                                 id="bulan_keterangan" aria-describedby="emailHelp"
-                                                                name="bulan_keterangan" value="">
+                                                                name="bulan_keterangan" value="" disabled>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -612,6 +612,14 @@
         function doSomething(param) {
             if ($(param.selected)) {
                 console.log(param);
+
+                <?php foreach($bulan as $buls) {?>
+                    var bulanid = "{{ $buls->id }}";
+                    if (param == bulanid) {
+                        $('#bulan_keterangan').attr('value', '{{ $buls->bulan_keterangan }}');
+                        console.log("{{$buls->bulan_keterangan}}");
+                    }
+                <?php } ?>
             }
         }
     </script>
