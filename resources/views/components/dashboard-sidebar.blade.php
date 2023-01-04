@@ -49,20 +49,19 @@
             </div>
         </li>
 
-        {{-- <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm2"
                 aria-expanded="true" aria-controls="collapseForm2">
                 <i class="fab fa-fw fa-wpforms"></i>
-                <span>Kelola Nilai</span>
+                <span>Kelola Bulan</span>
             </a>
             <div id="collapseForm2" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Manajemen Nilai</h6>
-                    <a class="collapse-item" href="#">Daftar Nilai</a>
-                    <a class="collapse-item" href="#">Kelola Nilai</a>
+                    <h6 class="collapse-header">Manajemen Bulan</h6>
+                    <a class="collapse-item" href="#">Daftar Bulan</a>
                 </div>
             </div>
-        </li> --}}
+        </li>
 
         {{-- <li class="nav-item">
             <a class="nav-link" href="ui-colors.html">
