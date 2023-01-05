@@ -98,7 +98,7 @@
     </div> --}}
 </div>
 
-<div class="card mb-3">
+{{-- <div class="card mb-3">
     <div class="card-body">
         <div class="container">
             <div class="row">
@@ -156,7 +156,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection
 {{--------------------- end main content ---------------------}}

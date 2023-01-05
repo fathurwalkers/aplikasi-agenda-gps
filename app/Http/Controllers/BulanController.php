@@ -40,7 +40,8 @@ class BulanController extends Controller
 
     public function ubah_bulan(Request $request, $id)
     {
-        //
+        $bulan_id = $id;
+        $bulan = Bulan::find($bulan_id);
     }
 
     public function hapus_bulan(Request $request, $id)
