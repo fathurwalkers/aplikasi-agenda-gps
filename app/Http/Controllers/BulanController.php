@@ -32,4 +32,29 @@ class BulanController extends Controller
             'kategori' => $kategori,
         ]);
     }
+
+    public function tambah_bulan()
+    {
+        //
+    }
+
+    public function ubah_bulan(Request $request, $id)
+    {
+        //
+    }
+
+    public function hapus_bulan(Request $request, $id)
+    {
+        $bulan_id = $id;
+        $bulan = Bulan::find($bulan_id);
+        $bulan_nama = $bulan->bulan_nama;
+        $hapus_bulan = $bulan->forceDelete();
+        if ($hapus_bulan == true) {
+            $alert = "Bulan (" . $bulan_nama . ") telah berhasil dihapus.";
+            return redirect()->route('daftar-bulan')->with('status', $alert);
+        } else {
+            $alert = "Bulan (" . $bulan_nama . ") gagal dihapus.";
+            return redirect()->route('daftar-bulan')->with('status', $alert);
+        }
+    }
 }
