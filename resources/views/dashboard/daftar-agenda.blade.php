@@ -247,7 +247,7 @@
                                                                 class="btn btn-sm btn-primary mr-1">Lihat</button>
                                                             @if ($users->login_level == 'admin')
                                                                 <button data-toggle="modal"
-                                                                    data-target="#modaltambahsiswa{{ $item->id }}"
+                                                                    data-target="#modalubahagenda{{ $item->id }}"
                                                                     class="btn btn-sm btn-success mr-1">Ubah</button>
                                                                 <button data-toggle="modal"
                                                                     data-target="#hapusModal{{ $item->id }}"
@@ -417,7 +417,7 @@
 
 
                                                     {{-- MODAL UBAH --}}
-                                                    <div class="modal fade" id="modaltambahsiswa{{ $item->id }}"
+                                                    <div class="modal fade" id="modalubahagenda{{ $item->id }}"
                                                         tabindex="-1" role="dialog"
                                                         aria-labelledby="exampleModalLabelLogout" aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
@@ -466,7 +466,7 @@
                                                                                     </select>
                                                                                 </div>
                                                                             </div> --}}
-                                                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                                            {{-- <div class="col-sm-12 col-md-12 col-lg-12">
                                                                                 <div class="form-group">
                                                                                     <label for="agenda_bulan">Bulan : </label>
                                                                                     <select class="form-control" id="exampleFormControlSelect1"
@@ -478,10 +478,10 @@
                                                                                         @endforeach
                                                                                     </select>
                                                                                 </div>
-                                                                            </div>
+                                                                            </div> --}}
                                                                         </div>
 
-                                                                        <div class="row">
+                                                                        {{-- <div class="row">
                                                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                                                 <div class="form-group">
                                                                                     <label for="bulan_keterangan">Keterangan Bulan : </label>
@@ -490,7 +490,7 @@
                                                                                         name="bulan_keterangan" value="" disabled>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
+                                                                        </div> --}}
 
                                                                         <div class="row">
                                                                             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -639,14 +639,28 @@
             if ($(param.selected)) {
                 console.log(param);
 
+                <?php foreach($agenda as $agen) { ?>
+                    <?php $cek2 = "#modalubahagenda" . $agen->id; ?>
+                    var cekvar = $('{{$cek2}}').hasClass('in');
+                    // console.log("{{$cek2}}");
+                    if (cekvar == true) {
+                        console.log(cekvar);
+                        // if (cekvar) {
+                        //     console.log();
+                        // }
+                    }
+
+                <?php } ?>
+
                 <?php foreach($bulan as $buls) {?>
                     var bulanid = "{{ $buls->id }}";
                     <?php $cek1 = "#bulan_keterangan" . $buls->id; ?>
-                    // if (param == bulanid) {
+                    if (param == bulanid) {
+                        console.log("{{$cek1}}");
                         $('{{$cek1}}').attr('value', '{{ $buls->bulan_keterangan }}');
                         var cekcek = $('{{$cek1}}').attr('value', '{{ $buls->bulan_keterangan }}');
                         console.log("{{$buls->bulan_keterangan}}");
-                    // }
+                    }
                 <?php } ?>
             }
         }
