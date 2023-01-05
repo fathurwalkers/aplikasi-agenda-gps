@@ -470,13 +470,24 @@
                                                                                 <div class="form-group">
                                                                                     <label for="agenda_bulan">Bulan : </label>
                                                                                     <select class="form-control" id="exampleFormControlSelect1"
-                                                                                    name="agenda_bulan">
+                                                                                    name="agenda_bulan" onchange="var optionVal = $(this).find(':selected').val(); doSomething2(optionVal)">
                                                                                         <option selected value="{{ intval($item->bulan_id) }}">{{ $item->bulan->bulan_nama }}</option>
                                                                                         @foreach ($bulan as $bul)
                                                                                             <option value="{{ $bul->id }}">{{ $bul->bulan_nama }}
                                                                                             </option>
                                                                                         @endforeach
                                                                                     </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                                                <div class="form-group">
+                                                                                    <label for="bulan_keterangan">Keterangan Bulan : </label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        id="bulan_keterangan{{ $item->id }}" aria-describedby="emailHelp"
+                                                                                        name="bulan_keterangan" value="" disabled>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -618,7 +629,24 @@
                     if (param == bulanid) {
                         $('#bulan_keterangan').attr('value', '{{ $buls->bulan_keterangan }}');
                         console.log("{{$buls->bulan_keterangan}}");
+                        console.log(checkmodal);
                     }
+                <?php } ?>
+            }
+        }
+
+        function doSomething2(param) {
+            if ($(param.selected)) {
+                console.log(param);
+
+                <?php foreach($bulan as $buls) {?>
+                    var bulanid = "{{ $buls->id }}";
+                    <?php $cek1 = "#bulan_keterangan" . $buls->id; ?>
+                    // if (param == bulanid) {
+                        $('{{$cek1}}').attr('value', '{{ $buls->bulan_keterangan }}');
+                        var cekcek = $('{{$cek1}}').attr('value', '{{ $buls->bulan_keterangan }}');
+                        console.log("{{$buls->bulan_keterangan}}");
+                    // }
                 <?php } ?>
             }
         }
