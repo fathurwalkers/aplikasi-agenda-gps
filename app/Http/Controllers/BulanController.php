@@ -33,15 +33,36 @@ class BulanController extends Controller
         ]);
     }
 
-    public function tambah_bulan()
+    public function tambah_bulan(Request $request)
     {
-        //
+        $bulan_id = $id;
+        $bulan = new Bulan;
+        $bulan_nama = $request->bulan_nama;
+        $bulan_keterangan = $request->bulan_keterangan;
+
+        $save_bulan = $bulan->create([
+            'bulan_nama' => $bulan_nama,
+            'bulan_keterangan' => $bulan_keterangan,
+            'created_at'    => now()
+            'updated_at'    => now()
+        ]);
+        $save_bulan->save();
+        return redirect()->route('daftar-bulan')->with('status', 'Berhasil melakukan Tambah bulan.');
     }
 
     public function ubah_bulan(Request $request, $id)
     {
         $bulan_id = $id;
         $bulan = Bulan::find($bulan_id);
+        $bulan_nama = $request->bulan_nama;
+        $bulan_keterangan = $request->bulan_keterangan;
+
+        $update_bulan = $bulan->update([
+            'bulan_nama' => $bulan_nama,
+            'bulan_keterangan' => $bulan_keterangan,
+            'updated_at'    => now()
+        ]);
+        return redirect()->route('daftar-bulan')->with('status', 'Berhasil melakukan update bulan.');
     }
 
     public function hapus_bulan(Request $request, $id)

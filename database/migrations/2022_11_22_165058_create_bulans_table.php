@@ -12,7 +12,7 @@ class CreateBulansTable extends Migration
             $table->id();
 
             $table->string('bulan_nama')->nullable();
-            $table->string('bulan_keterangan')->nullable();
+            $table->text('bulan_keterangan')->nullable();
 
             $table->timestamps();
         });
