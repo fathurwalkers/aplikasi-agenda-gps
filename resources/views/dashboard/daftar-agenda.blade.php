@@ -66,7 +66,7 @@
                                 </button>
                             </div>
 
-                            {{-- MODAL TAMBAH DATA SISWA --}}
+                            {{-- MODAL TAMBAH DATA Bulan --}}
                             <div class="modal fade" id="modaltambah" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabelLogout" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -190,9 +190,9 @@
                                                     </div>
                                                     {{-- <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
-                                                            <label for="siswa_telepon">Longitude : </label>
-                                                            <input type="text" class="form-control" id="siswa_telepon"
-                                                                aria-describedby="emailHelp" name="siswa_telepon">
+                                                            <label for="Bulan_telepon">Longitude : </label>
+                                                            <input type="text" class="form-control" id="Bulan_telepon"
+                                                                aria-describedby="emailHelp" name="Bulan_telepon">
                                                         </div>
                                                     </div> --}}
                                                 </div>
@@ -424,7 +424,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModalLabelLogout">
-                                                                        Ubah Data Siswa
+                                                                        Ubah Data Bulan
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">

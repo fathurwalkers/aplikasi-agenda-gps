@@ -35,7 +35,6 @@ class BulanController extends Controller
 
     public function tambah_bulan(Request $request)
     {
-        $bulan_id = $id;
         $bulan = new Bulan;
         $bulan_nama = $request->bulan_nama;
         $bulan_keterangan = $request->bulan_keterangan;
