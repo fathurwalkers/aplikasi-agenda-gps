@@ -113,11 +113,11 @@ class InformasiController extends Controller
         $informasi_judul = $informasi->informasi_judul;
         $hapus_informasi = $informasi->forceDelete();
         if ($hapus_informasi == true) {
-            $alert = "Agenda Kegiatan (" . $informasi_judul . ") telah berhasil dihapus.";
-            return redirect()->route('daftar-agenda')->with('status', $alert);
+            $alert = "Informasi Kegiatan (" . $informasi_judul . ") telah berhasil dihapus.";
+            return redirect()->route('daftar-informasi')->with('status', $alert);
         } else {
-            $alert = "Agenda Kegiatan (" . $informasi_judul . ") gagal dihapus.";
-            return redirect()->route('daftar-agenda')->with('status', $alert);
+            $alert = "Informasi Kegiatan (" . $informasi_judul . ") gagal dihapus.";
+            return redirect()->route('daftar-informasi')->with('status', $alert);
         }
     }
 }
