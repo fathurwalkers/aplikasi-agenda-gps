@@ -43,7 +43,7 @@ class BulanController extends Controller
         $save_bulan = $bulan->create([
             'bulan_nama' => $bulan_nama,
             'bulan_keterangan' => $bulan_keterangan,
-            'created_at'    => now()
+            'created_at'    => now(),
             'updated_at'    => now()
         ]);
         $save_bulan->save();
