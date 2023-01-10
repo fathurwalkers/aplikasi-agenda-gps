@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Extraculicullar SMADA</title>
+    <title>Agenda Adat </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/client') }}/css/style.css" />
     <link rel="stylesheet" href="{{ asset('assets/client') }}/vendors/feather/feather.css" />
@@ -32,8 +32,8 @@
 <body>
     <div class="container1">
         {{-- <div class="header">
-            <img class="img1" src="images/logosmada.png" alt="" />
-            <h5>Sistem Informasi Extraculicullar</h5>
+            <img class="img1" src="images/logo.png" alt="" />
+            <h5>Sistem Informasi Agenda Adat</h5>
             <br />
             <h6>SMA NEGERI 2 BAUBAU</h6>
         </div> --}}

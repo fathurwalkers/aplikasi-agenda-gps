@@ -466,7 +466,7 @@
                                                                                     </select>
                                                                                 </div>
                                                                             </div> --}}
-                                                                            {{-- <div class="col-sm-12 col-md-12 col-lg-12">
+                                                                            <div class="col-sm-12 col-md-12 col-lg-12">
                                                                                 <div class="form-group">
                                                                                     <label for="agenda_bulan">Bulan : </label>
                                                                                     <select class="form-control" id="exampleFormControlSelect1"
@@ -478,7 +478,7 @@
                                                                                         @endforeach
                                                                                     </select>
                                                                                 </div>
-                                                                            </div> --}}
+                                                                            </div>
                                                                         </div>
 
                                                                         {{-- <div class="row">
