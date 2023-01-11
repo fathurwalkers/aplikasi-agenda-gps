@@ -67,13 +67,13 @@
                         <label class="form-check-label" for="exampleCheck1">Ingat Saya</label>
                     </div> --}}
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center mb-3">
+                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
                             <button type="submit" class="btn btn-success">LOGIN</button>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end mt-2 mb-2">
-                            <a href="{{ route('register') }}" style="color:white;">Belum punya akun? Daftar disini.</a>
+                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
+                            <a href="{{ route('register') }}"></a>
                         </div>
                     </div>
                     </a>

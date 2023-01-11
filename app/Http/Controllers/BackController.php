@@ -23,6 +23,15 @@ class BackController extends Controller
         $this->users = session('data_login');
     }
 
+    public function register()
+    {
+        $users = session('data_login');
+        if ($users) {
+            return redirect()->route('client');
+        }
+        return view('register');
+    }
+
     public function daftar_akun()
     {
         $session_users = session('data_login');
