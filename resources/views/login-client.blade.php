@@ -31,12 +31,6 @@
 
 <body>
     <div class="container1">
-        {{-- <div class="header">
-            <img class="img1" src="images/logo.png" alt="" />
-            <h5>Sistem Informasi Agenda Adat</h5>
-            <br />
-            <h6>SMA NEGERI 2 BAUBAU</h6>
-        </div> --}}
         <br />
         <br />
         <div class="row">
