@@ -62,10 +62,6 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name="login_password">
                     </div>
-                    {{-- <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Ingat Saya</label>
-                    </div> --}}
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
                             <button type="submit" class="btn btn-success">LOGIN</button>
