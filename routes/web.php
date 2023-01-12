@@ -22,6 +22,7 @@ Route::get('/login-admin', [BackController::class, 'login_admin'])->name('login-
 Route::post('/proses-login', [BackController::class, 'post_login'])->name('post-login');
 Route::post('/logout', [BackController::class, 'logout'])->name('logout');
 
+// This is The Route for an Access to Dashboard
 Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], function () {
 
     // DASHBOARD ROUTE
@@ -50,6 +51,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'cekloginadmin'], functi
 
 });
 
+// This is The Route for an Access to Client Side - Android Client
 Route::group(['prefix' => '/client', 'middleware' => 'ceklogin'], function () {
     // CLIENT ROUTE
     Route::get('/', [ClientController::class, 'index'])->name('client');
