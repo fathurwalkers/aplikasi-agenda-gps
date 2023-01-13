@@ -45,7 +45,7 @@
         <div class="card text-white bg-info mb-4 mt-4 pb-4" style="max-width: 18rem; margin:auto;">
             <div class="card-header text-center">LOGIN</div>
             <div class="card-body">
-                <form class="user" action="{{ route('post-login') }}" method="POST">
+                <form class="user" action="{{ route('post-register') }}" method="POST">
                     @csrf
                     <input type="hidden" name="cekrequest" value="user">
                     <div class="form-group">
