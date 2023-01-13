@@ -239,6 +239,6 @@ class BackController extends Controller
         ]);
         $save_pengguna->save();
 
-        return redirect()->route('login')->with('status', 'Berhasil melakukan registrasi!');
+        return redirect()->route('login-client')->with('status', 'Berhasil melakukan registrasi!');
     }
 }

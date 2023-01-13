@@ -96,7 +96,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-info">KEMBALI KE LOGIN</button>
+                            <button type="button" class="btn btn-info" onclick="location.href = '{{ route('login-client') }}';">KEMBALI KE LOGIN</button>
                         </div>
                     </div>
                     </a>
