@@ -14,7 +14,7 @@ Route::get('/', function () {
 });
 
 Route::get('/daftar', [BackController::class, 'register'])->name('register');
-Route::get('/post-register', [BackController::class, 'post_register'])->name('post-register');
+Route::post('/post-register', [BackController::class, 'post_register'])->name('post-register');
 
 Route::get('/login', [BackController::class, 'login_client'])->name('login-client');
 Route::get('/login-admin', [BackController::class, 'login_admin'])->name('login-admin');

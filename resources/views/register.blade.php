@@ -32,53 +32,71 @@
 <body>
     <div class="container1">
 
-
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
-            </div>
-        </div>
         <div class="card text-white bg-info mb-4 mt-4 pb-4" style="max-width: 18rem; margin:auto;">
-            <div class="card-header text-center">LOGIN</div>
+            <div class="card-header text-center">DAFTAR AKUN</div>
+
             <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                    </div>
+                </div>
                 <form class="user" action="{{ route('post-register') }}" method="POST">
                     @csrf
                     <input type="hidden" name="cekrequest" value="user">
                     <div class="form-group">
                         <label for="pengguna_nama">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="pengguna_nama" aria-describedby="emailHelp" name="pengguna_nama">
+                        <input type="text" class="form-control" id="pengguna_nama" aria-describedby="emailHelp" name="pengguna_nama" value="{{ old('pengguna_nama') }}">
                     <div class="form-group">
                         <label for="pengguna_telepon">No. HP / Telepon</label>
-                        <input type="number" class="form-control" id="pengguna_telepon" aria-describedby="emailHelp" name="pengguna_telepon">
+                        <input type="number" class="form-control" id="pengguna_telepon" aria-describedby="emailHelp" name="pengguna_telepon" value="{{ old('pengguna_telepon') }}">
                     </div>
                     <div class="form-group">
                         <label for="pengguna_alamat">Alamat</label>
-                        <input type="text" class="form-control" id="pengguna_alamat" aria-describedby="emailHelp" name="pengguna_alamat">
+                        <input type="text" class="form-control" id="pengguna_alamat" aria-describedby="emailHelp" name="pengguna_alamat" value="{{ old('pengguna_alamat') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="pengguna_email">Jenis Kelamin</label>
+                        <select class="form-select form-control" name="pengguna_jeniskelamin">
+                            <option value="L">Laki - Laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="pengguna_email">Email</label>
-                        <input type="text" class="form-control" id="pengguna_email" aria-describedby="emailHelp" name="pengguna_email">
+                        <input type="text" class="form-control" id="pengguna_email" aria-describedby="emailHelp" name="pengguna_email" value="{{ old('pengguna_email') }}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="login_username">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="login_username" value="{{ old('login_username') }}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name="login_password">
                     </div>
+                    <div class="form-group">
+                        <label for="password2">Konfirmasi Password</label>
+                        <input type="password" class="form-control" id="password2" name="login_password2">
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-success">LOGIN</button>
+                            <button type="submit" class="btn btn-success">DAFTAR SEKARANG</button>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                            <p>
+                                Atau
+                            </p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
-                            <a href="{{ route('register') }}"></a>
+                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-info">KEMBALI KE LOGIN</button>
                         </div>
                     </div>
                     </a>

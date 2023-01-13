@@ -178,13 +178,26 @@ class BackController extends Controller
     public function post_register(Request $request)
     {
         $validatedLogin                 = $request->validate([
-            'login_nama'                => 'required',
             'login_username'            => 'required',
             'login_password'            => 'required',
-            'login_email'               => 'required',
-            'login_telepon'             => 'required',
-            'login_alamat'              => 'required'
         ]);
+
+        $pengguna_nama = $request->pengguna_nama;
+        $pengguna_telepon = $request->pengguna_telepon;
+        $pengguna_email = $request->pengguna_email;
+        $pengguna_alamat = $request->pengguna_alamat;
+        $pengguna_jeniskelamin = $request->pengguna_jeniskelamin;
+        $login_username = $request->login_username;
+        $login_password = $request->login_password;
+
+        // dump($pengguna_nama);
+        // dump($pengguna_telepon);
+        // dump($pengguna_email);
+        // dump($pengguna_alamat);
+        // dump($login_username);
+        // dump($login_password);
+        // die;
+
         if ($validatedLogin["login_password"] !== $request->login_password2) {
             return back()->with('status', 'Password harus sama.')->withInput();
         }
@@ -199,12 +212,11 @@ class BackController extends Controller
         $login_status                   = "verified";
         $login_data                     = new Login;
         $save_login                     = $login_data->create([
-            'login_nama'                => $validatedLogin["login_nama"],
+            'login_nama'                => $pengguna_nama,
             'login_username'            => $validatedLogin["login_username"],
             'login_password'            => $hashPassword,
-            'login_email'               => $validatedLogin["login_email"],
-            'login_telepon'             => $validatedLogin["login_telepon"],
-            'login_alamat'              => $validatedLogin["login_alamat"],
+            'login_email'               => $pengguna_email,
+            'login_telepon'             => $pengguna_telepon,
             'login_token'               => $token,
             'login_level'               => $level,
             'login_status'              => $login_status,
@@ -212,6 +224,24 @@ class BackController extends Controller
             'updated_at'                => now()
         ]);
         $save_login->save();
+
+        $pengguna = new Pengguna;
+        $save_pengguna = $pengguna->create([
+            'pengguna_nama' => $pengguna_nama,
+            'pengguna_jeniskelamin' => $pengguna_jeniskelamin,
+            'pengguna_alamat' => $pengguna_alamat,
+            'pengguna_telepon' => $pengguna_telepon,
+            'pengguna_foto' => "default-user.png",
+            'pengguna_status' => "AKTIF",
+            'login_id' => $save_login->id,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $save_pengguna->save();
+
+        dd($save_pengguna);
+        die;
+
         return redirect()->route('login')->with('status', 'Berhasil melakukan registrasi!');
     }
 }
