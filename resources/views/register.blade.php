@@ -31,8 +31,8 @@
 
 <body>
     <div class="container1">
-        <br />
-        <br />
+
+
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 @if (session('status'))
@@ -42,12 +42,27 @@
                 @endif
             </div>
         </div>
-        <div class="card text-white bg-info mb-3 mt-4" style="max-width: 18rem; margin:auto;">
+        <div class="card text-white bg-info mb-4 mt-4 pb-4" style="max-width: 18rem; margin:auto;">
             <div class="card-header text-center">LOGIN</div>
             <div class="card-body">
                 <form class="user" action="{{ route('post-login') }}" method="POST">
                     @csrf
                     <input type="hidden" name="cekrequest" value="user">
+                    <div class="form-group">
+                        <label for="pengguna_nama">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="pengguna_nama" aria-describedby="emailHelp" name="pengguna_nama">
+                    <div class="form-group">
+                        <label for="pengguna_telepon">No. HP / Telepon</label>
+                        <input type="number" class="form-control" id="pengguna_telepon" aria-describedby="emailHelp" name="pengguna_telepon">
+                    </div>
+                    <div class="form-group">
+                        <label for="pengguna_alamat">Alamat</label>
+                        <input type="text" class="form-control" id="pengguna_alamat" aria-describedby="emailHelp" name="pengguna_alamat">
+                    </div>
+                    <div class="form-group">
+                        <label for="pengguna_email">Email</label>
+                        <input type="text" class="form-control" id="pengguna_email" aria-describedby="emailHelp" name="pengguna_email">
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="login_username">
@@ -70,6 +85,10 @@
                 </form>
             </div>
         </div>
+
+
+    </div>
+
         <!-- plugins:js -->
         <script src="{{ asset('assets/client') }}/vendors/js/vendor.bundle.base.js"></script>
         <!-- endinject -->
