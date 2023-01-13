@@ -239,9 +239,6 @@ class BackController extends Controller
         ]);
         $save_pengguna->save();
 
-        dd($save_pengguna);
-        die;
-
         return redirect()->route('login')->with('status', 'Berhasil melakukan registrasi!');
     }
 }
