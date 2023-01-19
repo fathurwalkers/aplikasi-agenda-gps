@@ -37,8 +37,8 @@
                                         {{ $item->informasi_judul }}
                                     </div>
                                     <div class="card-body text-primary">
-                                        <h5 class="card-title">{{ date('d, M Y', strtotime($item->agenda_waktu)) }}
-                                            ({{ date('H:i', strtotime($item->agenda_waktu)) }})</h5>
+                                        <h5 class="card-title">{{ date('d, M Y', strtotime($item->informasi_waktu)) }}
+                                            ({{ date('H:i', strtotime($item->informasi_waktu)) }})</h5>
                                         <p class="card-text h6">
                                             {{ $item->informasi_isi }}
                                         </p>
