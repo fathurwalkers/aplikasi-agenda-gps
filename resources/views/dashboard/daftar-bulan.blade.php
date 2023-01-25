@@ -34,12 +34,12 @@
                                     </b>
                                 </h4>
                             </div>
-                            <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-end">
+                            {{-- <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-end">
                                 <button type="button" class="btn btn-md btn-info" data-toggle="modal"
                                     data-target="#modaltambah">
                                     Tambah Bulan
                                 </button>
-                            </div>
+                            </div> --}}
                         </div>
 
                         {{-- MODAL TAMBAH DATA Bulan --}}
