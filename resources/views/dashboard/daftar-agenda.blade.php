@@ -89,14 +89,14 @@
                                                         <div class="form-group">
                                                             <label for="agenda_nama">Agenda : </label>
                                                             <input type="text" class="form-control" id="agenda_nama"
-                                                                aria-describedby="emailHelp" name="agenda_nama" required id="tambah_agenda_nama">
+                                                                aria-describedby="emailHelp" name="agenda_nama" required id="tambah_agenda_nama" oninvalid="this.setCustomValidity('anda harus mengisi Nama Agenda.')" oninput="setCustomValidity('')">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
                                                             <label for="agenda_tempat">Tempat : </label>
                                                             <input type="text" class="form-control" id="agenda_tempat"
-                                                                aria-describedby="emailHelp" name="agenda_tempat" id="tambah_agenda_tempat" required>
+                                                                aria-describedby="emailHelp" name="agenda_tempat" id="tambah_agenda_tempat" required oninvalid="this.setCustomValidity('anda harus mengisi Tempat Agenda.')" oninput="setCustomValidity('')">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,7 +145,7 @@
                                                             <label for="agenda_penyelenggara">Penyelenggara : </label>
                                                             <input type="text" class="form-control"
                                                                 id="agenda_penyelenggara" aria-describedby="emailHelp"
-                                                                name="agenda_penyelenggara" id="tambah_agenda_penyelenggara" required>
+                                                                name="agenda_penyelenggara" id="tambah_agenda_penyelenggara" required oninvalid="this.setCustomValidity('anda harus mengisi form penyelenggara.')" oninput="setCustomValidity('')">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -154,7 +154,7 @@
                                                     <div class="col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
                                                             <label for="tambah_agenda_keterangan" class="textareaContainer">Keterangan : </label>
-                                                            <textarea name="agenda_keterangan" id="tambah_agenda_keterangan" required></textarea>
+                                                            <textarea name="agenda_keterangan" id="tambah_agenda_keterangan" required oninvalid="this.setCustomValidity('anda harus memberikan Keterangan Agenda.')" oninput="setCustomValidity('')"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -163,13 +163,13 @@
                                                     <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
                                                             <label for="agenda_tanggal">Tanggal</label>
-                                                            <input type="date" class="form-control" id="agenda_tanggal" name="agenda_tanggal" required>
+                                                            <input type="date" class="form-control" id="agenda_tanggal" name="agenda_tanggal" required oninvalid="this.setCustomValidity('anda harus menentukan Tanggal Agenda.')" oninput="setCustomValidity('')">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
                                                             <label for="agenda_waktu">Waktu</label>
-                                                            <input type="time" class="form-control" id="agenda_waktu" name="agenda_waktu" required>
+                                                            <input type="time" class="form-control" id="agenda_waktu" name="agenda_waktu" required oninvalid="this.setCustomValidity('anda harus menentukan waktu pelaksanaan Agenda.')" oninput="setCustomValidity('')">
                                                         </div>
                                                     </div>
                                                 </div>
