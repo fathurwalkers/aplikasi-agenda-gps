@@ -51,7 +51,7 @@
             </a>
         </div>
 
-        <div class="col-10 mb-4 btn shadow">
+        {{-- <div class="col-10 mb-4 btn shadow">
             <a href="{{ route('client-kategori-agenda') }}">
                 <div class="card border-danger ">
                     <div class="card-body text-left">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </a>
-        </div>
+        </div> --}}
 
     </div>
 @endsection
