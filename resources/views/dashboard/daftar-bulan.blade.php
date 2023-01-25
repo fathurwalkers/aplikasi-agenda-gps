@@ -123,9 +123,9 @@
                                                             <button href="#" data-toggle="modal"
                                                                 data-target="#modallihat{{ $item->id }}"
                                                                 class="btn btn-sm btn-success mr-1">Lihat</button>
-                                                            <button href="#" data-toggle="modal" data-target="#modalubahagenda{{ $item->id }}" class="btn btn-sm btn-info mr-1">Ubah</button>
+                                                            {{-- <button href="#" data-toggle="modal" data-target="#modalubahagenda{{ $item->id }}" class="btn btn-sm btn-info mr-1">Ubah</button>
                                                             <button href="#" data-toggle="modal"
-                                                            data-target="#hapusModal{{ $item->id }}" class="btn btn-sm btn-danger mr-1">Hapus</button>
+                                                            data-target="#hapusModal{{ $item->id }}" class="btn btn-sm btn-danger mr-1">Hapus</button> --}}
                                                         </div>
                                                     </div>
 
