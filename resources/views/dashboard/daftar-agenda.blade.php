@@ -80,7 +80,7 @@
                                             </button>
                                         </div>
 
-                                        <form action="{{ route('tambah-agenda') }}" method="POST">
+                                        <form action="{{ route('tambah-agenda') }}" method="POST" id="formtambah">
                                             @csrf
                                             <div class="modal-body">
 
@@ -89,14 +89,14 @@
                                                         <div class="form-group">
                                                             <label for="agenda_nama">Agenda : </label>
                                                             <input type="text" class="form-control" id="agenda_nama"
-                                                                aria-describedby="emailHelp" name="agenda_nama">
+                                                                aria-describedby="emailHelp" name="agenda_nama" required id="tambah_agenda_nama">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
                                                             <label for="agenda_tempat">Tempat : </label>
                                                             <input type="text" class="form-control" id="agenda_tempat"
-                                                                aria-describedby="emailHelp" name="agenda_tempat">
+                                                                aria-describedby="emailHelp" name="agenda_tempat" id="tambah_agenda_tempat" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,7 +145,7 @@
                                                             <label for="agenda_penyelenggara">Penyelenggara : </label>
                                                             <input type="text" class="form-control"
                                                                 id="agenda_penyelenggara" aria-describedby="emailHelp"
-                                                                name="agenda_penyelenggara">
+                                                                name="agenda_penyelenggara" id="tambah_agenda_penyelenggara" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,8 +153,8 @@
                                                 <div class="row">
                                                     <div class="col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
-                                                            <label for="agenda_keterangan" class="textareaContainer">Keterangan : </label>
-                                                            <textarea name="agenda_keterangan" id="agenda_keterangan"></textarea>
+                                                            <label for="tambah_agenda_keterangan" class="textareaContainer">Keterangan : </label>
+                                                            <textarea name="agenda_keterangan" id="tambah_agenda_keterangan" required></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -163,13 +163,13 @@
                                                     <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
                                                             <label for="agenda_tanggal">Tanggal</label>
-                                                            <input type="date" class="form-control" id="agenda_tanggal" name="agenda_tanggal">
+                                                            <input type="date" class="form-control" id="agenda_tanggal" name="agenda_tanggal" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6 col-md-6 col-lg-6">
                                                         <div class="form-group">
                                                             <label for="agenda_waktu">Waktu</label>
-                                                            <input type="time" class="form-control" id="agenda_waktu" name="agenda_waktu">
+                                                            <input type="time" class="form-control" id="agenda_waktu" name="agenda_waktu" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -664,5 +664,17 @@
                 <?php } ?>
             }
         }
+
+        // $('#formtambah').submit(function() {
+        //     var res = true;
+        //     // here I am checking for textFields, password fields, and any
+        //     // drop down you may have in the form
+        //     $("input[id='tambah_agenda_nama'],]",this).each(function() {
+        //         if($(this).val().trim() == "") {
+        //             res = false;
+        //         }
+        //     })
+        //     return res; // returning false will prevent the form from submitting.
+        // });
     </script>
 @endpush
