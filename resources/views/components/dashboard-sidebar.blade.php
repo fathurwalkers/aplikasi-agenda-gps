@@ -28,7 +28,7 @@
             <div id="collapseForm1" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Informasi</h6>
-                    <a class="collapse-item" href="{{ route('daftar-informasi') }}">Daftar Informasi</a>
+                    <a class="collapse-item" href="{{ route('daftar-informasi') }}"><i class="fa fa-align-justify"></i>  Daftar Informasi</a>
                     {{-- <a class="collapse-item" href="#">Tambah Mata Pelajaran</a> --}}
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelola Agenda</h6>
-                    <a class="collapse-item" href="{{ route('daftar-agenda') }}">Daftar Agenda</a>
+                    <a class="collapse-item" href="{{ route('daftar-agenda') }}"><i class="fa fa-align-justify"></i>  Daftar Agenda</a>
                     {{-- <a class="collapse-item" href="#">Tambah Agenda</a> --}}
                 </div>
             </div>
@@ -58,7 +58,7 @@
             <div id="collapseForm2" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Manajemen Bulan</h6>
-                    <a class="collapse-item" href="{{ route('daftar-bulan') }}">Daftar Bulan</a>
+                    <a class="collapse-item" href="{{ route('daftar-bulan') }}"><i class="fa fa-align-justify"></i>  Daftar Bulan</a>
                 </div>
             </div>
         </li>
@@ -88,7 +88,9 @@
                     <h6 class="collapse-header">Manajemen Pengguna</h6>
                     {{-- <a class="collapse-item" href="#">Daftar Pengguna</a> --}}
                     {{-- <a class="collapse-item" href="#">Daftar Pelaksana</a> --}}
-                    <a class="collapse-item" href="{{ route('daftar-akun') }}">Daftar Akun</a>
+                    <a class="collapse-item" href="{{ route('daftar-akun') }}">
+                        <i class="fa fa-address-book"></i>
+                         Daftar Akun</a>
                 </div>
             </div>
         </li>

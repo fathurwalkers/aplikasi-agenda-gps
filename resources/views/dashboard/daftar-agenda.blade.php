@@ -62,7 +62,7 @@
                             <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-end">
                                 <button type="button" class="btn btn-md btn-info" data-toggle="modal"
                                     data-target="#modaltambah">
-                                    Tambah Agenda
+                                    <i class="fa fa-arrow-up"></i> Tambah Agenda
                                 </button>
                             </div>
 
@@ -200,9 +200,11 @@
                                             </div>
 
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-info"
-                                                    data-dismiss="modal">Batalkan</button>
-                                                <button type="submit" class="btn btn-success">Tambah Agenda</button>
+                                                <button type="button" class="btn btn-danger"
+                                                    data-dismiss="modal"><i class="fas fa-arrow-left"></i> Batalkan</button>
+                                                <button type="submit" class="btn btn-success">
+                                                    <i class="fa fa-arrow-up"></i>Tambah
+                                                </button>
                                             </div>
 
                                         </form>
@@ -244,14 +246,14 @@
                                                             class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center mx-auto">
                                                             <button data-toggle="modal"
                                                                 data-target="#modallihat{{ $item->id }}"
-                                                                class="btn btn-sm btn-primary mr-1">Lihat</button>
+                                                                class="btn btn-sm btn-primary mr-1"><i class="fas fa-info-circle"></i></button>
                                                             @if ($users->login_level == 'admin')
                                                                 <button data-toggle="modal"
                                                                     data-target="#modalubahagenda{{ $item->id }}"
-                                                                    class="btn btn-sm btn-success mr-1">Ubah</button>
+                                                                    class="btn btn-sm btn-success mr-1"><i class="fas fa-pen"></i></button>
                                                                 <button data-toggle="modal"
                                                                     data-target="#hapusModal{{ $item->id }}"
-                                                                    class="btn btn-sm btn-danger">Hapus</button>
+                                                                    class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
                                                             @endif
                                                         </div>
                                                     </div>
