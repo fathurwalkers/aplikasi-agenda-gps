@@ -4,6 +4,15 @@
 
 @push('css')
     <link href="{{ asset('datatables') }}/datatables.min.css" rel="stylesheet">
+
+    <style>
+        label {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            color: #fff!important;
+        }
+    </style>
+
 @endpush
 
 @section('content-title', 'Dashboard - Daftar Bulan')
