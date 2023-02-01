@@ -43,7 +43,7 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-dark bg-primary shadow mb-5 fixed-top" style="height:85px;">
+    <nav class="navbar navbar-dark bg-primary shadow mb-3 fixed-top" style="height:85px;">
       <div class="container">
         <a class="navbar-brand" href="#">
           {{-- <img src="{{ asset('assets') }}/Logo-Tut-Wuri.png" width="45" height="45" class="d-inline-block align-top mr-1" alt=""/> --}}
