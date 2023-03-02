@@ -42,9 +42,6 @@
                                         <p class="card-text h6">
                                             {{ $item->informasi_isi }}
                                         </p>
-                                        <p class="card-text h6">
-                                            Agenda : {{ $item->agenda->agenda_nama }}
-                                        </p>
                                     </div>
                                     {{-- <button class="btn btn-success mb-3 mx-4" onclick="location.href = '{{ route('client-lihat-agenda', $item->id) }}';">
                                         Lihat Agenda

@@ -288,7 +288,7 @@
                                                                         <div class="row">
                                                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                                                 <div class="form-group">
-                                                                                    <label for="bulan_keterangan">Tempat : </label>
+                                                                                    <label for="bulan_keterangan">Keterangan : </label>
                                                                                     <input type="text" class="form-control" id="bulan_keterangan"
                                                                                         aria-describedby="emailHelp" name="bulan_keterangan" value="{{ $item->bulan_keterangan }}">
                                                                                 </div>

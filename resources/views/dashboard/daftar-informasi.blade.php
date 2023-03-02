@@ -73,7 +73,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabelLogout">
-                                                Tambah Agenda
+                                                Tambah Informasi
                                             </h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
@@ -94,7 +94,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="row">
+                                                {{-- <div class="row">
                                                     <div class="col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
                                                             <label for="informasi_agenda">Agenda : </label>
@@ -107,7 +107,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
 
                                                 <div class="row">
                                                     <div class="col-sm-12 col-md-12 col-lg-12">
@@ -161,7 +161,7 @@
                                             <th>Judul Informasi</th>
                                             <th>Status</th>
                                             <th>Tanggal / Waktu</th>
-                                            <th>Agenda</th>
+                                            {{-- <th>Agenda</th> --}}
 
                                             <th>Kelola</th>
                                         </tr>
@@ -174,7 +174,7 @@
                                                 <td>{{ $item->informasi_judul }}</td>
                                                 <td>{{ $item->informasi_status }}</td>
                                                 <td>{{ date('d-M-Y / H:i', strtotime($item->informasi_waktu)) }}</td>
-                                                <td>{{ $item->agenda->agenda_nama }}</td>
+                                                {{-- <td>{{ $item->agenda->agenda_nama }}</td> --}}
 
                                                 <td>
                                                     <div class="row">
@@ -203,7 +203,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModalLabelLogout">
-                                                                        Informasi Agenda
+                                                                        Lihat Informasi
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -367,7 +367,7 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="row">
+                                                                        {{-- <div class="row">
                                                                             <div class="col-sm-12 col-md-12 col-lg-12">
                                                                                 <div class="form-group">
                                                                                     <label for="informasi_agenda">Agenda : </label>
@@ -381,7 +381,7 @@
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
+                                                                        </div> --}}
 
                                                                         <div class="row">
                                                                             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -412,7 +412,7 @@
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-info"
                                                                             data-dismiss="modal">Batalkan</button>
-                                                                        <button type="submit" class="btn btn-success">Tambah Agenda</button>
+                                                                        <button type="submit" class="btn btn-success">Ubah Informasi</button>
                                                                     </div>
 
                                                                 </form>

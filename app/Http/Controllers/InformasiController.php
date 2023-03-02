@@ -56,7 +56,8 @@ class InformasiController extends Controller
             'informasi_isi' => $informasi_isi,
             'informasi_status' => "AKTIF",
             'informasi_waktu' => $informasi_tanggal_waktu,
-            'agenda_id' => $agenda->id,
+            'agenda_id' => NULL,
+            // 'agenda_id' => $agenda->id,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -93,7 +94,8 @@ class InformasiController extends Controller
             'informasi_isi' => $informasi_isi,
             'informasi_status' => "AKTIF",
             'informasi_waktu' => $informasi_tanggal_waktu,
-            'agenda_id' => $agenda->id,
+            // 'agenda_id' => $agenda->id,
+            'agenda_id' => NULL,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
