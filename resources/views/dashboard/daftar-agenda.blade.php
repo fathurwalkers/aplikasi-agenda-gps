@@ -581,7 +581,20 @@
     <script src="{{ asset('datatables') }}/datatables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                oLanguage: {
+                    "sSearch": "Pencarian berdasarkan : ",
+                    "sLengthMenu": "Menampilkan _MENU_ Data",
+                    "sInfo": "menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "sZeroRecords":      "Hasil yang dicari tidak ditemukan",
+                    oPaginate: {
+                        sNext: "Selanjutnya",
+                        sPrevious: "Sebelumnya",
+                    }
+                }
+            });
+            // $("#example_previous").text("Sebelumnya").replace("Hi", "Bye");
+            // $("#example_next").text("Selanjutnya").replace("Hi", "Bye");
         });
     </script>
     <script type='text/javascript'>

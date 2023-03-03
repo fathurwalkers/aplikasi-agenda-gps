@@ -49,7 +49,7 @@
             </div>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm2"
                 aria-expanded="true" aria-controls="collapseForm2">
                 <i class="fab fa-fw fa-wpforms"></i>
@@ -61,7 +61,7 @@
                     <a class="collapse-item" href="{{ route('daftar-bulan') }}"><i class="fa fa-align-justify"></i>  Daftar Bulan</a>
                 </div>
             </div>
-        </li>
+        </li> --}}
 
         {{-- <li class="nav-item">
             <a class="nav-link" href="ui-colors.html">

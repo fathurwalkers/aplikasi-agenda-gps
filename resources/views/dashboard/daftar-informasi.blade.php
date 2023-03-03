@@ -28,6 +28,14 @@
             padding: 0;
             border-width: 1;
         }
+
+        /* .paginate_button.previous:before {
+            content: '← '!important;
+        }
+
+        .paginate_button.next:after {
+            content: ' →'!important;
+        } */
     </style>
 @endpush
 
@@ -442,8 +450,23 @@
 @push('js')
     <script src="{{ asset('datatables') }}/datatables.min.js"></script>
     <script>
+        // $("#example_previous").text("Sebelumnya");
+        // $("#example_next").text("Selanjutnya");
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                oLanguage: {
+                    "sSearch": "Pencarian berdasarkan : ",
+                    "sLengthMenu": "Menampilkan _MENU_ Data",
+                    "sInfo": "menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "sZeroRecords":      "Hasil yang dicari tidak ditemukan",
+                    oPaginate: {
+                        sNext: "Selanjutnya",
+                        sPrevious: "Sebelumnya",
+                    }
+                }
+            });
+            // $("#example_previous").text("Sebelumnya").replace("Hi", "Bye");
+            // $("#example_next").text("Selanjutnya").replace("Hi", "Bye");
         });
     </script>
     <script type='text/javascript'>
